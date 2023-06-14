@@ -1,6 +1,4 @@
-@extends('layout')
-
-@section('content')
+<x-layout>
 <div
     class="bg-gray-50 border border-gray-200 p-10 max-w-lg mx-auto mt-24"
 >
@@ -99,4 +97,4 @@
         </div>
     </form>
 </div>
-@endsection
+</x-layout>

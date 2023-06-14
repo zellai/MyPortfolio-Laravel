@@ -13,13 +13,13 @@ class ListingController extends Controller
     public function index(){
         return view('listings.index', [
             'heading' => 'Latest Listings',
-            'listings' => Listing::all()
+            'listings' => Listing::latest()->filter(request(['tag']))->get()
         ]);
     }
 
     //Show single listing
     public function show(Listing $listing){
-        return view('listings.show', [
+        return view('listings.show  ', [
             'listing' => $listing
         ]);
     }
