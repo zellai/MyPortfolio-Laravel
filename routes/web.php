@@ -17,14 +17,6 @@ use App\Http\Controllers\ListingController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-// All Listings
-Route::get('/', [ListingController::class, 'index']);
-// Single Listing
-Route::get('/listings/{listing}', [ListingController::class, 'show']);
-
-// Show Register/Create Form
-Route::get('/register', [UserController::class, 'create']);
-
 // Common Resource Routes:
 // index - show all listing
 // show - Show single listing
@@ -33,6 +25,19 @@ Route::get('/register', [UserController::class, 'create']);
 // edit - show form to edit listing
 // update - Update listing
 // destroy - delete listing
+
+// All Listings
+Route::get('/', [ListingController::class, 'index']);
+
+// Show Create Form
+Route::get('/listings/create', [ListingController::class, 'create']);
+
+// Single Listing
+Route::get('/listings/{listing}', [ListingController::class, 'show']);
+
+
+// Show Register/Create Form
+Route::get('/register', [UserController::class, 'create']);
 
 // Create New User
 Route::post('/users', [UserController::class, 'store']);
