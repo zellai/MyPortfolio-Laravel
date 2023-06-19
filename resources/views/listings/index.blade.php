@@ -9,6 +9,7 @@
 
 @foreach($listings as $listing)
 <!-- @include('components.listing-card') -->
+
 <x-listing-card :listing="$listing" />
 @endforeach
 <div>
