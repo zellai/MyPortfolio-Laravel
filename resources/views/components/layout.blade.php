@@ -61,7 +61,7 @@
                 >
             </li>
             <li>
-                <a href="/login" class="hover:text-laravel"
+                <a href="{{url('/login')}}" class="hover:text-laravel"
                     ><i class="fa-solid fa-arrow-right-to-bracket"></i>
                     Login</a
                 >
