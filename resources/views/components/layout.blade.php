@@ -86,7 +86,7 @@
         >
     </footer>
 
-    <x-flash-message/>
+    <x-flash-message />
 
 </body>
 </html>

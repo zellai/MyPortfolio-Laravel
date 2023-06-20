@@ -9,7 +9,7 @@
             <p class="mb-4">Log in to your account</p>
         </header>
     
-        <form method="POST" action="{{url('/users/authenticate')}}">
+        <form method="POST" action="/lsapp/public/users/authenticate">
             @csrf
     
             <div class="mb-6">
