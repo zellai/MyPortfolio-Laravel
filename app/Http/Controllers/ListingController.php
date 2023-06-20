@@ -45,7 +45,7 @@ class ListingController extends Controller
             $formFields['logo'] = $request->file('logo')->store('logos', 'public');
         }
 
-        // $formFields['user_id'] = auth()->id();
+        $formFields['user_id'] = auth()->id();
 
         Listing::create($formFields); 
 
