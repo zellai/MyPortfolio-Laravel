@@ -3,9 +3,9 @@
     <x-card class="p-10 max-w-lg mx-auto mt-24">
         <header class="text-center">
             <h2 class="text-2xl font-bold uppercase mb-1">
-                Create a Gig
+                Add Project
             </h2>
-            <p class="mb-4">Post a gig to find a developer</p>
+            <p class="mb-4">Post a Project</p>
         </header>
 
     <form method="POST" action="{{url('/listings')}}" enctype="multipart/form-data">
