@@ -99,4 +99,17 @@ class ListingController extends Controller
         
         return view('listings.manage', ['listings' => auth()->user()->listings()->get()]);
     }
+
+    // Experience
+    public function experience() {
+        return view('listings.experience');
+    }
+
+    // Projects
+    public function projects(){
+        return view('listings.projects', [
+            'heading' => 'Latest Listings',
+            'listings' => Listing::latest()->filter(request(['tag','search']))->paginate(6)
+        ]);
+    }
 }

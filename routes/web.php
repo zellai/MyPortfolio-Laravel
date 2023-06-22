@@ -47,6 +47,12 @@ Route::delete('/listings/{listing}', [ListingController::class, 'destroy'])->mid
 // Manage Listings
 Route::get('/listings/manage', [ListingController::class, 'manage'])->middleware('auth');
 
+// Create Experience
+Route::get('/listings/experience', [ListingController::class, 'experience'])->middleware('auth');
+
+// Projects
+Route::get('/listings/projects', [ListingController::class, 'projects'])->middleware('auth');
+
 // Single Listing
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
 

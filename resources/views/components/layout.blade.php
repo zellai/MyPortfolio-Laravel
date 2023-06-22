@@ -12,8 +12,21 @@
         crossorigin="anonymous"
         referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+        crossorigin="anonymous">
+
     <script src="//unpkg.com/alpinejs" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" 
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" 
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" 
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" 
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" 
+        crossorigin="anonymous"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -28,12 +41,29 @@
     <title>MyBlog | Ezel M. Espera</title>
 </head>
 <body class="mb-48">
-    <nav class="flex justify-between items-center mb-4">
+    <nav class="flex justify-between items-center mb-2 navbar navbar-light bg-light">
         <a href="{{url('/')}}"
             ><img class="w-24" src="{{asset('images/Ezel-logo.png')}}" alt="" class="logo"
         /></a>
         <ul class="flex space-x-6 mr-6 text-lg">
             @auth
+            <li>
+                <a href="{{url('/')}}">
+                About
+                </a>
+            </li>
+            <li>
+                <a href="/lsapp/public/listings/experience" class="hover:text-laravel"
+                    >
+                    Experience</a
+                >
+            </li>
+            <li>
+                <a href="{{url('/listings/projects')}}" class="hover:text-laravel"
+                    >
+                    Projects</a
+                >
+            </li>
             <li>
                 <span class="font-bold uppercase">
                 Welcome {{auth()->user()->name}}
