@@ -48,7 +48,17 @@
         <ul class="flex space-x-6 mr-6 text-lg">
             @auth
             <li>
+                <span class="font-bold uppercase">
+                Welcome {{auth()->user()->name}}
+                </span>
+            </li>
+            <li>
                 <a href="{{url('/')}}">
+                Home
+                </a>
+            </li>
+            <li>
+                <a href="{{url('/listings/about')}}">
                 About
                 </a>
             </li>
@@ -64,11 +74,7 @@
                     Projects</a
                 >
             </li>
-            <li>
-                <span class="font-bold uppercase">
-                Welcome {{auth()->user()->name}}
-                </span>
-            </li>
+            
             <li>
                 <a href="/lsapp/public/listings/manage" class="hover:text-laravel"
                     ><i class="fa-solid fa-gear"></i>

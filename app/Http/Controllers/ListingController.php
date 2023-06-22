@@ -105,6 +105,11 @@ class ListingController extends Controller
         return view('listings.experience');
     }
 
+    // About
+    public function about() {
+        return view('listings.about');
+    }
+
     // Projects
     public function projects(){
         return view('listings.projects', [

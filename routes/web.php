@@ -53,6 +53,9 @@ Route::get('/listings/experience', [ListingController::class, 'experience'])->mi
 // Projects
 Route::get('/listings/projects', [ListingController::class, 'projects'])->middleware('auth');
 
+// About Page
+Route::get('/listings/about', [ListingController::class, 'about'])->middleware('auth');
+
 // Single Listing
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
