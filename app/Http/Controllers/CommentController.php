@@ -14,14 +14,12 @@ class UserController extends Controller
     //Create comment
     public function store(Request $request) {
     $formFields = $request->validate([
-        'comment' => 'required',
+        'comments' => 'required',
     ]);
 
     if($request->hasFile('logo')) {
         $formFields['logo'] = $request->file('logo')->store('logos', 'public');
     }
-
-    $formFields['user_id'] = auth()->id();
 
     Comment::create($formFields); 
 

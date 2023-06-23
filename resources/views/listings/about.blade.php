@@ -1,8 +1,14 @@
 <x-layout>
-<div class="card">
-    <div>
-        <img class="rounded mx-auto d-block" style="width: 18rem; " src="{{asset('images/mypicture.jpg')}}" alt="Responsive image">
+<section class="relative h-72 bg-laravel flex flex-col justify-center align-center text-center space-y-4 mb-4">
+    <div
+        class="absolute top-0 left-0 w-full h-full opacity-80 bg-no-repeat bg-center"
+        style="background-image: url('images/background.jpg')"
+    >   
+    <img class="rounded mx-auto d-block img-circle" style="height: 18rem;"src="{{asset('images/mypicture.jpg')}}" alt="image">
     </div>
+</section>
+
+<div class="card">    
     <div class="card align-center text-center" >
         <div class="card-body" style="margin-left: 4rem; margin-right: 4rem;">
             <h1 class="display-4 mb-4">About Me</h1>

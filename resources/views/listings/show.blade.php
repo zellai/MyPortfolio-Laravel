@@ -41,10 +41,10 @@
                         </label>
                         <textarea
                             class="border border-gray-200 rounded p-2 w-full"
-                            name="comment"
+                            name="comments"
                             rows="1"
                             placeholder="Enter comment"
-                        >{{old('comment')}}</textarea>
+                        >{{old('comments')}}</textarea>
             
                     </div>
                     <a

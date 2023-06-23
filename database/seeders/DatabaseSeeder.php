@@ -25,6 +25,8 @@ class DatabaseSeeder extends Seeder
             'user_id' => $user->id
          ]);
 
+         
+
         //  Listing::create([
         //     'title' => 'Laravel Senior Developer', 
         //     'tags' => 'laravel, javascript',
