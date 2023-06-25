@@ -3,12 +3,12 @@
     <x-card class="p-10 max-w-lg mx-auto mt-24">
         <header class="text-center">
             <h2 class="text-2xl font-bold uppercase mb-1">
-                Add Project
+                Create a Project
             </h2>
-            <p class="mb-4">Post a Project</p>
+            <p class="mb-4">Post another Project</p>
         </header>
 
-    <form method="POST" action="{{url('/listings')}}" enctype="multipart/form-data">
+    <form method="POST" action="/listings" enctype="multipart/form-data">
         @csrf
         <div class="mb-6">
             <label
@@ -158,7 +158,7 @@
             <button
                 class="bg-laravel text-white rounded py-2 px-4 hover:bg-black"
             >
-                Create Gig
+                Create Project
             </button>
 
             <a href="/" class="text-black ml-4"> Back </a>

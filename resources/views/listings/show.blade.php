@@ -1,7 +1,7 @@
 <x-layout>
 @include('partials._search')
 
-<a href="/lsapp/public/" class="inline-block text-black ml-4 mb-4"
+<a href="/" class="inline-block text-black ml-4 mb-4"
                 ><i class="fa-solid fa-arrow-left"></i> Back
 </a>
 <div class="mx-4">
@@ -41,17 +41,17 @@
                         </label>
                         <textarea
                             class="border border-gray-200 rounded p-2 w-full"
-                            name="comments"
+                            name="userComment"
                             rows="1"
                             placeholder="Enter comment"
-                        >{{old('comments')}}</textarea>
+                        ></textarea>
             
                     </div>
                     <a
                         href="mailto:{{$listing->email}}"
                         class="block bg-laravel text-white mt-6 py-2 rounded-xl hover:opacity-80"
                         ><i class="fa-solid fa-envelope"></i>
-                        Contact Employer</a
+                        Contact Me</a
                     >
 
                     <a
@@ -63,8 +63,10 @@
                     >
                 </div>
             </div>
+            
         </div>
     </x-card>
+    <x-comment-card :listing="$listing" />
 
     {{-- <x-card class="mt-4 p-2 flex space-x-6">
         <a href="/lsapp/public/listings/{{$listing->id}}/edit">

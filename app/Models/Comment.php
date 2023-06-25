@@ -9,12 +9,8 @@ class Comment extends Model
 {
     use HasFactory;
 
-     /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
-    protected $fillable = [
-        'comments',
-    ];
+    // Relationship to User
+    public function user() {
+        return $this->belongTo(User::class, 'user_id');
+    }
 }

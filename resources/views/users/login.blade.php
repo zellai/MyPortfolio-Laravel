@@ -9,7 +9,7 @@
             <p class="mb-4">Log in to your account</p>
         </header>
     
-        <form method="POST" action="/lsapp/public/users/authenticate">
+        <form method="POST" action="/users/authenticate">
             @csrf
     
             <div class="mb-6">
@@ -58,7 +58,7 @@
             <div class="mt-8">
                 <p>
                     Don't have an account?
-                    <a href="{{url('/register')}}" class="text-laravel"
+                    <a href="/register'" class="text-laravel"
                         >Register</a
                     >
                 </p>

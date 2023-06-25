@@ -6,11 +6,12 @@ use App\Models\Listing;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
-
+use App\Models\User;
 class ListingController extends Controller
 {
     // show all listings
     public function index(){
+        // dd(auth()->user());
         return view('listings.index', [
             'heading' => 'Latest Listings',
             'listings' => Listing::latest()->filter(request(['tag','search']))->paginate(6)
@@ -19,6 +20,7 @@ class ListingController extends Controller
 
     //Show single listing
     public function show(Listing $listing){
+        // dd($listing);
         return view('listings.show  ', [
             'listing' => $listing
         ]);
@@ -38,7 +40,7 @@ class ListingController extends Controller
             'website' => 'required',
             'email' => ['required', 'email'],
             'tags' => 'required',
-            'description' => 'required',
+            'description' => 'required'
         ]);
  
         if($request->hasFile('logo')) {
@@ -96,8 +98,8 @@ class ListingController extends Controller
 
     // Manage Listings
     public function manage() {
-        
-        return view('listings.manage', ['listings' => auth()->user()->listings()->get()]);
+        $userId = User::find((auth()->user()->id));
+        return view('listings.manage', ['listings' =>  $userId->listings()->get()]);
     }
 
     // Experience
