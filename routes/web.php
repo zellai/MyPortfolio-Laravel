@@ -56,6 +56,15 @@ Route::get('/listings/projects', [ListingController::class, 'projects'])->middle
 // About Page
 Route::get('/listings/about', [ListingController::class, 'about'])->middleware('auth');
 
+// // Comment
+// Route::get('/listings/{id}', [CommentController::class, 'show'])->middleware('auth');
+
+// // Comment
+// Route::post('/listings/{id}', [CommentController::class, 'comment'])->middleware('auth');
+
+
+
+
 // Single Listing
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
@@ -76,6 +85,5 @@ Route::get('/login', [UserController::class, 'login'])->name('login')->middlewar
 // Log In User
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 
-// Comment
-Route::post('/listings/comment', [ListingController::class, 'comment'])->middleware('auth');
+
 

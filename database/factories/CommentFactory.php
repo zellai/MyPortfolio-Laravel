@@ -17,7 +17,7 @@ class CommentFactory extends Factory
     public function definition(): array
     {
         return [
-            'userComment' => $this->faker->paragraph(5),
+            'userComment' => $this->faker->paragraph(1),
         ];
     }
 }

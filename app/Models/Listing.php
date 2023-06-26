@@ -27,5 +27,9 @@ class Listing extends Model
     public function user() {
         return $this->belongTo(User::class, 'user_id');
     }
+
+    public function comment() {
+        return $this->hasMany(Comment::class, 'listing_id');
+    }
 }
     

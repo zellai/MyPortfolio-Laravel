@@ -32,21 +32,21 @@
                 <div class="text-lg space-y-6">
                     {{$listing->description}}
                     <hr>
-                    <div class="mb-6">
-                        <label
-                            for="description"
-                            class="inline-block text-lg mb-2"
-                        >
-                            Post Comment
-                        </label>
-                        <textarea
-                            class="border border-gray-200 rounded p-2 w-full"
-                            name="userComment"
-                            rows="1"
-                            placeholder="Enter comment"
-                        ></textarea>
-            
+                    <div class="bg-light p-2">
+                        <div class="d-flex flex-row align-items-start"><img class="rounded-circle" src="https://i.imgur.com/RpzrMR2.jpg" width="40">
+                            <textarea class="form-control ml-1 shadow-none textarea"
+                                name="userComment"
+                                rows="1">{{old('userComment')}}</textarea></div>
+                        <div class="mt-2 text-right">
+                            <button class="btn btn-primary btn-sm shadow-none" 
+                                >Post comment</button>
+                            <button href="/"class="btn btn-outline-primary btn-sm ml-1 shadow-none" 
+                                >Cancel</button>
+                        </div>
                     </div>
+
+                    <x-comment-card :comments="$listing->comment"/>
+
                     <a
                         href="mailto:{{$listing->email}}"
                         class="block bg-laravel text-white mt-6 py-2 rounded-xl hover:opacity-80"
@@ -66,7 +66,7 @@
             
         </div>
     </x-card>
-    <x-comment-card :listing="$listing" />
+    
 
     {{-- <x-card class="mt-4 p-2 flex space-x-6">
         <a href="/lsapp/public/listings/{{$listing->id}}/edit">

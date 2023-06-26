@@ -20,9 +20,11 @@ class ListingController extends Controller
 
     //Show single listing
     public function show(Listing $listing){
-        // dd($listing);
+        // dd($listing->comment);
+        
         return view('listings.show  ', [
-            'listing' => $listing
+            'listing' => $listing,
+            
         ]);
     }
 
