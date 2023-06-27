@@ -47,8 +47,5 @@ class User extends Authenticatable
         return $this->hasMany(Listing::class, 'user_id');
     }
 
-     // Relationship With comment
-     public function comments() {
-        return $this->hasMany(Comment::class, 'user_id');
-    }
+     
 }

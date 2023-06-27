@@ -4,6 +4,7 @@ use App\Models\Listing;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ListingController;
 
 
@@ -59,8 +60,8 @@ Route::get('/listings/about', [ListingController::class, 'about'])->middleware('
 // // Comment
 // Route::get('/listings/{id}', [CommentController::class, 'show'])->middleware('auth');
 
-// // Comment
-// Route::post('/listings/{id}', [CommentController::class, 'comment'])->middleware('auth');
+// Comment
+Route::post('/listings', [CommentController::class, 'store'])->middleware('auth');
 
 
 

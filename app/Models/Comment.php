@@ -14,8 +14,8 @@ class Comment extends Model
     
     ];
 
-    // Relationship to User
-    public function user() {
-        return $this->belongTo(User::class, 'user_id');
+    // Relationship to listing
+    public function listings() {
+        return $this->belongTo(Listing::class, 'listing_id');
     }
 }

@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
 
          
          Comment::factory(2)->create([
-            'user_id' => $user->id
+            'listing_id' => $user->id
          ]);
 
          

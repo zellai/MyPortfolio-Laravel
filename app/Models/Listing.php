@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\Listing as Authenticatable;
+
 
 class Listing extends Model
 {
@@ -28,6 +30,7 @@ class Listing extends Model
         return $this->belongTo(User::class, 'user_id');
     }
 
+    // Relationship to Comment
     public function comment() {
         return $this->hasMany(Comment::class, 'listing_id');
     }

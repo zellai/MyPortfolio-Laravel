@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Comment;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
+use App\Models\Listing;
 use App\Http\Controllers\Controller;
 
 class CommentController extends Controller
@@ -18,11 +20,12 @@ class CommentController extends Controller
     // Comment
     public function store(Request $request) {
         $formFields = $request->validate([
-            'userComment' => 'required'
+            'userComment' => 'required',
         ]);
  
-
         $formFields['user_id'] = auth()->id();
+        $formFields['listing_id'] = auth()->id();
+
 
         Comment::create($formFields); 
 
