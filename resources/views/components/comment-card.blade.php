@@ -1,4 +1,5 @@
 @props(['comments'])
+@props(['listing'])
 
 
 <x-card>
@@ -22,9 +23,18 @@
                             </div>
                             <div class="bg-white">
                                 <div class="d-flex flex-row fs-12">
-                                    <div class="like p-2 cursor"><i class="fa fa-thumbs-o-up"></i><span class="ml-1">Like</span></div>
-                                    <div class="like p-2 cursor"><i class="fa fa-commenting-o"></i><span class="ml-1">Comment</span></div>
-                                    <div class="like p-2 cursor"><i class="fa fa-share"></i><span class="ml-1">Share</span></div>
+                                    <td class="px-4 py-8 border-t border-b border-gray-300 text-lg">
+                                        <a href="/listings" class="text-blue-400 px-6 py-2 rounded-xl"><i
+                                            class="fa-solid fa-pen-to-square"></i>
+                                          Edit</a>
+                                      </td>
+                                      <td class="px-4 py-8 border-t border-b border-gray-300 text-lg">
+                                        <form method="POST" action="/listings">
+                                          @csrf
+                                          @method('DELETE')
+                                          <button class="text-red-500"><i class="fa-solid fa-trash"></i> Delete</button>
+                                        </form>
+                                      </td>                              
                                 </div>
                             </div>                    
                         </div>

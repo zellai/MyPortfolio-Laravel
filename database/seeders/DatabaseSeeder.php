@@ -22,13 +22,13 @@ class DatabaseSeeder extends Seeder
             'email' => 'john@gmail.com'
         ]);
 
-         Listing::factory(6)->create([
+         $listing = Listing::factory(6)->create([
             'user_id' => $user->id
          ]);
 
          
-         Comment::factory(2)->create([
-            'listing_id' => $user->id
+         Comment::factory()->create([
+            'listing_id' => $listing->id
          ]);
 
          

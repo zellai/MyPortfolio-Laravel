@@ -60,7 +60,7 @@ Route::get('/listings/about', [ListingController::class, 'about'])->middleware('
 // // Comment
 // Route::get('/listings/{id}', [CommentController::class, 'show'])->middleware('auth');
 
-// Comment
+// Store Comment data
 Route::post('/listings', [CommentController::class, 'store'])->middleware('auth');
 
 
