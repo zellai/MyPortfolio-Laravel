@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Models\Listing;
 use App\Http\Controllers\Controller;
+use Illuminate\Routing\Route;
 
 class CommentController extends Controller
 {
@@ -19,13 +20,17 @@ class CommentController extends Controller
         ]);
     }
     // Comment
-    public function store(Request $request) {
-        $formFields = $request->validate([
-            'userComment' => 'nullable',
-        ]);
+    public function store(Request $request,$id) {
+        // dd($id);
+        // dd($request->userComment);
+        // $formFields = $request->validate([
+        //     'userComment' => 'nullable',
+        // ]);
  
         $formFields['user_id'] = auth()->id();
-        $formFields['listing_id'] = auth()->id();
+        $formFields['listing_id'] = $id;
+        $formFields['userComment'] = $request->userComment;
+
 
 
         Comment::create($formFields); 

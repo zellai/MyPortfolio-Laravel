@@ -9,6 +9,7 @@
         <div
             class="flex flex-col items-center justify-center text-center"
         >
+        {{-- {{$listing}} --}}
             <img
                 class="w-48 mr-6 mb-6"
                 src="{{$listing->logo ? asset('storage/' . $listing->logo) : asset('/images/no-image.png')}}"
@@ -32,8 +33,9 @@
                 <div class="text-lg space-y-6">
                     {{$listing->description}}
                     <hr>
-
-                    <form method="POST" action="/listings" enctype="multipart/form-data">
+                    {{-- {{$listing->id}} --}}
+                    <form method="POST" action="/listings/{{$listing->id}}/comment" enctype="multipart/form-data">
+                    {{-- <form method="POST" action="{{ route('comments.store', $listing->id) }}" enctype="multipart/form-data"> --}}
                         @csrf
                         <div class="bg-light p-2">
                             <label

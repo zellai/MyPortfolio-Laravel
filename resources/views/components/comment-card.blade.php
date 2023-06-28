@@ -1,5 +1,4 @@
 @props(['comments'])
-@props(['listing'])
 
 
 <x-card>

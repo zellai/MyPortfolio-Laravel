@@ -60,8 +60,8 @@ Route::get('/listings/about', [ListingController::class, 'about'])->middleware('
 // // Comment
 // Route::get('/listings/{id}', [CommentController::class, 'show'])->middleware('auth');
 
-// Store Comment data
-Route::post('/listings', [CommentController::class, 'store'])->middleware('auth');
+// // Store Comment data
+// Route::post('/listings', [CommentController::class, 'store'])->middleware('auth');
 
 
 
@@ -86,5 +86,5 @@ Route::get('/login', [UserController::class, 'login'])->name('login')->middlewar
 // Log In User
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 
-
-
+// Comment
+Route::post('/listings/{id}/comment', [CommentController::class, 'store'])->middleware('auth');
