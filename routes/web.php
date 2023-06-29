@@ -88,3 +88,13 @@ Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 
 // Comment
 Route::post('/listings/{id}/comment', [CommentController::class, 'store'])->middleware('auth');
+
+// Edit Comment
+Route::get('/listings/{id}/comment', [CommentController::class, 'edit'])->middleware('auth');
+
+// Update listing
+Route::put('/listings/{id}', [CommentController::class, 'update'])->middleware('auth');
+
+// Delete listing
+Route::delete('/listings/{listing}', [CommentController::class, 'destroy'])->middleware('auth');
+

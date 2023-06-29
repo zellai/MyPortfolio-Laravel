@@ -38,4 +38,23 @@ class CommentController extends Controller
 
         return redirect('/')->with('message', 'Comment created successfully!');
     }
+
+    public function edit(Comment $comment){
+        return view('listings.show', ['comment' => $comment]);
+    }
+
+
+    // Update Listing Data
+    public function update(Request $request, Comment $comment, $id) {
+
+        // Make sure logged in user is owner
+        if($comment->user_id != auth()->id()) {
+            abort(403, 'Unauthorized Action');
+        }
+    
+    $formFields['user_id'] = auth()->id();
+    $formFields['listing_id'] = $id;
+    $formFields['userComment'] = $request->userComment;
+
+    }
 }

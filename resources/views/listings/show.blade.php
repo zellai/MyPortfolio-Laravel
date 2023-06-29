@@ -56,8 +56,6 @@
                             <div class="mt-2 text-right">
                                 <button class="btn btn-primary btn-sm shadow-none" 
                                     >Post comment</button>
-                                <button href="/"class="btn btn-outline-primary btn-sm ml-1 shadow-none" 
-                                    >Cancel</button>
                             </div>
                         </div>
                     </form>
