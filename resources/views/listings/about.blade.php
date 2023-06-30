@@ -8,7 +8,7 @@
                 class="col absolute top-0 left-0 w-full h-full opacity-80 bg-no-repeat bg-center rounded"
                 style="background-image: url('images/background.jpg'); padding:8rem;"
             >   
-            <img class="rounded mx-auto d-block img-circle" style="height: 18rem;"src="{{asset('images/mypicture.jpg')}}" alt="image">
+            <img class="rounded-circle mx-auto d-block img-circle" style="height: 18rem;"src="{{asset('images/mypicture.jpg')}}" alt="image">
             </div>
         </section>
 

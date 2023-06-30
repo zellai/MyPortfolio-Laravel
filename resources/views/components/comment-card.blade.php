@@ -1,6 +1,5 @@
 @props(['comments'])
 
-
 <x-card>
     @unless(count($comments)==0)
     @foreach ($comments as $comment)

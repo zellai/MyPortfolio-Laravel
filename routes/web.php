@@ -87,6 +87,14 @@ Route::get('/login', [UserController::class, 'login'])->name('login')->middlewar
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 
 
+
+
+
+
+
+// Show Comment Form
+Route::get('/listings/{id}/comment', [CommentController::class, 'create'])->middleware('auth');
+
 // Comment
 Route::post('/listings/{id}/comment', [CommentController::class, 'store'])->middleware('auth');
 

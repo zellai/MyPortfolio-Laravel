@@ -19,6 +19,14 @@ class CommentController extends Controller
             'comments' => Comment::latest()
         ]);
     }
+
+    // Show Create Form
+    public function create(Listing $listing, $id){
+        return view('comments.create', [
+            'listing' => $listing,
+        ]);
+    }
+
     // Comment
     public function store(Request $request,$id) {
         // dd($id);

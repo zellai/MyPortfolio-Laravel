@@ -84,7 +84,7 @@
                     >
                 </li>
                 <li class="nav-item" role="presentation">
-                    <form class="nav-link" data-bs-toggle="tab" aria-selected="false" role="tab" tabindex="-1" method="POST" action="{{url('/logout')}}">
+                    <form class=nav-link" data-bs-toggle="tab" aria-selected="false" role="tab" tabindex="-1" method="POST" action="{{url('/logout')}}">
                     @csrf
                     <button type="submit">
                         <i class="fa-solid fa-door-closed"></i> Logout

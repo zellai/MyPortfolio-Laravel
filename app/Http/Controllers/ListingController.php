@@ -12,7 +12,7 @@ class ListingController extends Controller
     // show all listings
     public function index(){
         // dd(auth()->user());
-        return view('listings.index', [
+        return view('listings.projects', [
             'heading' => 'Latest Listings',
             'listings' => Listing::latest()->filter(request(['tag','search']))->paginate(6)
         ]);
