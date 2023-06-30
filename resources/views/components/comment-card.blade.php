@@ -23,7 +23,7 @@
                             <div class="bg-white">
                                 <div class="d-flex flex-row fs-12">
                                     <td class="px-4 py-8 border-t border-b border-gray-300 text-lg">
-                                        <a href="/listings" class="text-blue-400 px-6 py-2 rounded-xl"><i
+                                        <a href="/listings/edit" class="text-blue-400 px-6 py-2 rounded-xl"><i
                                             class="fa-solid fa-pen-to-square"></i>
                                           Edit</a>
                                       </td>

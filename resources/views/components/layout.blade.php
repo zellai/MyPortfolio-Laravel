@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="https://bootswatch.com/5/quartz/bootstrap.min.css" />
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -41,69 +42,71 @@
     <title>MyBlog | Ezel M. Espera</title>
 </head>
 <body class="mb-48">
-    <nav class="flex justify-between items-center mb-2 navbar navbar-light bg-light">
-        <a href="{{url('/')}}"
-            ><img class="w-24" src="{{asset('images/Ezel-logo.png')}}" alt="" class="logo"
-        /></a>
-        <ul class="flex space-x-6 mr-6 text-lg">
-            @auth
-            <li>
-                <span class="font-bold uppercase">
-                Welcome {{auth()->user()->name}}
-                </span>
-            </li>
-            <li>
-                <a href="/">
-                Home
-                </a>
-            </li>
-            <li>
-                <a href="/listings/about">
-                About
-                </a>
-            </li>
-            <li>
-                <a href="/listings/experience" class="hover:text-laravel"
+    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a href="/"
+                ><img class="w-24" src="{{asset('images/Ezel-logo.png')}}" alt="" class="logo"
+            /></a>
+            <ul class="nav nav-tabs" role="tablist">
+                @auth
+                <li class="nav-item" role="presentation">
+                    <span class="nav-link" data-bs-toggle="tab" href="/" aria-selected="false" role="tab" tabindex="-1">
+                    Welcome {{auth()->user()->name}}
+                    </span>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" data-bs-toggle="tab" href="/" aria-selected="false" role="tab" tabindex="-1">
+                    Home
+                    </a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" data-bs-toggle="tab" href="/listings/about" aria-selected="false" role="tab" tabindex="-1" >
+                    About
+                    </a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a href="/listings/experience" class="nav-link" data-bs-toggle="tab" aria-selected="false" role="tab" tabindex="-1"
+                        >
+                        Experience</a
                     >
-                    Experience</a
-                >
-            </li>
-            <li>
-                <a href="/listings/projects" class="hover:text-laravel"
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a href="/listings/projects" class="nav-link" data-bs-toggle="tab" aria-selected="false" role="tab" tabindex="-1""
+                        >
+                        Projects</a
                     >
-                    Projects</a
-                >
-            </li>
-            
-            <li>
-                <a href="/listings/manage" class="hover:text-laravel"
-                    ><i class="fa-solid fa-gear"></i>
-                    Manage Listings</a
-                >
-            </li>
-            <li>
-                <form class="inline" method="POST" action="{{url('/logout')}}">
-                @csrf
-                <button type="submit">
-                    <i class="fa-solid fa-door-closed"></i> Logout
+                </li>
+                
+                <li class="nav-item" role="presentation">
+                    <a href="/listings/manage" class="nav-link" data-bs-toggle="tab" aria-selected="false" role="tab" tabindex="-1"
+                        ><i class="fa-solid fa-gear"></i>
+                        Manage Listings</a
+                    >
+                </li>
+                <li class="nav-item" role="presentation">
+                    <form class="nav-link" data-bs-toggle="tab" aria-selected="false" role="tab" tabindex="-1" method="POST" action="{{url('/logout')}}">
+                    @csrf
+                    <button type="submit">
+                        <i class="fa-solid fa-door-closed"></i> Logout
 
-                </button>
-                </form>
-            </li>
-            @else
-            <li>
-                <a href="/register" class="hover:text-laravel"
-                    ><i class="fa-solid fa-user-plus"></i> Register</a
-                >
-            </li>
-            <li>
-                <a href="/login" class="hover:text-laravel"
-                    ><i class="fa-solid fa-arrow-right-to-bracket"></i>
-                    Login</a
-                >
-            </li>
-            @endauth
-        </ul>
+                    </button>
+                    </form>
+                </li>
+                @else
+                <li>
+                    <a href="/register" class="hover:text-laravel"
+                        ><i class="fa-solid fa-user-plus"></i> Register</a
+                    >
+                </li>
+                <li>
+                    <a href="/login" class="hover:text-laravel"
+                        ><i class="fa-solid fa-arrow-right-to-bracket"></i>
+                        Login</a
+                    >
+                </li>
+                @endauth
+            </ul>
+        </div>
     </nav>      
 
     <main>

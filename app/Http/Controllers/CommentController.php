@@ -40,7 +40,8 @@ class CommentController extends Controller
     }
 
     public function edit(Comment $comment){
-        return view('listings.show', ['comment' => $comment]);
+        dd($comment);
+        return view('comments.edit', ['comment' => $comment]);
     }
 
 

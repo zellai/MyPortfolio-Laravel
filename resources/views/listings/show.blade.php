@@ -33,10 +33,15 @@
                 <div class="text-lg space-y-6">
                     {{$listing->description}}
                     <hr>
+                    <div class="p-4">
+                        <a href="/listings/{{$listing->id}}/comment"  ><i class="fa-regular fa-message"></i>  Comment</a>
+                        <button type="button" class="btn btn-outline-light">Comment</button>
+
+                    </div>
                     {{-- {{$listing->id}} --}}
-                    <form method="POST" action="/listings/{{$listing->id}}/comment" enctype="multipart/form-data">
+                    {{-- <form method="POST" action="/listings/{{$listing->id}}/comment" enctype="multipart/form-data"> --}}
                     {{-- <form method="POST" action="{{ route('comments.store', $listing->id) }}" enctype="multipart/form-data"> --}}
-                        @csrf
+                        {{-- @csrf
                         <div class="bg-light p-2">
                             <label
                                 for="userComment"
@@ -58,7 +63,7 @@
                                     >Post comment</button>
                             </div>
                         </div>
-                    </form>
+                    </form> --}}
                     
                     <x-comment-card :comments="$listing->comment"/>
 
