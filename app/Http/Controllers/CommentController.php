@@ -28,7 +28,7 @@ class CommentController extends Controller
     }
 
     // Comment
-    public function store(Request $request,$id) {
+    public function store(Request $request,$id, Comment $comment) {
         // dd($id);
         // dd($request->userComment);
         // $formFields = $request->validate([

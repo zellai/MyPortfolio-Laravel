@@ -7,7 +7,7 @@
             src="{{$listing->logo ? asset('storage/' . $listing->logo) : asset('/images/no-image.png')}}"
             alt=""
         />
-        <div>
+        <div class="card-body">
             <h3 class="text-2xl">
                 <a href="/listings/{{$listing->id}}">{{$listing->title}}</a>
             </h3>
