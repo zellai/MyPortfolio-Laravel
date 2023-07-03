@@ -57,11 +57,6 @@ Route::get('/listings/projects', [ListingController::class, 'projects'])->middle
 // About Page
 Route::get('/listings/about', [ListingController::class, 'about'])->middleware('auth');
 
-// // Comment
-// Route::get('/listings/{id}', [CommentController::class, 'show'])->middleware('auth');
-
-// // Store Comment data
-// Route::post('/listings', [CommentController::class, 'store'])->middleware('auth');
 
 
 
@@ -98,11 +93,11 @@ Route::post('/listings/{id}/comment', [CommentController::class, 'store'])->midd
 // Show Edit Comment Form
 Route::get('/edit-comment/{id}', [CommentController::class, 'edit'])->middleware('auth');
 
-// Update listing
+// Update Comment
 Route::put('/comment/{id}', [CommentController::class, 'update'])->middleware('auth');
 
-// Delete listing
-Route::delete('/edit-comment/{id}', [CommentController::class, 'destroy'])->middleware('auth');
+// Delete Comment
+Route::delete('/listings/comment/{id}', [CommentController::class, 'destroy'])->middleware('auth');
 
 
 // // Show Comment Form

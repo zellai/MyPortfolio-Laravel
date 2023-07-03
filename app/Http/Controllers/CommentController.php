@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
-use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
 use App\Models\Listing;
-use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
+use Illuminate\Validation\Rule;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class CommentController extends Controller
 {
@@ -55,7 +56,7 @@ class CommentController extends Controller
     public function update(Request $request, $id, Comment $comment) {
 
         // // Make sure logged in user is owner
-        // if($comment->user_id != auth()->id()) {
+        // if($listing->user_id != auth()->id()) {
         //     abort(403, 'Unauthorized Action');
         // }
 
@@ -69,9 +70,21 @@ class CommentController extends Controller
     }
 
      // Delete Comment
-     public function destroy(Comment $comment, $id){
-        $comment = $comment->find($id);
-        $comment->delete();
-        return redirect('/')->with('message', 'Comment Deleted Successfully');
+     public function destroy($id){
+        // // Make sure logged in user is owner
+        // if($listing->user_id != auth()->id()) {
+        //     abort(403, 'Unauthorized Action');
+        // }
+
+        $comment = Comment::findOrFail($id);
+        
+        // Check if the authenticated user owns the comment
+        if (Auth::user()->id === $comment->user_id) {
+            $comment->delete();
+    
+            return back()->with('success', 'Comment deleted successfully.');
+        } else {
+            return back()->with('error', 'You are not authorized to delete this comment.');
+        }
     }
 }

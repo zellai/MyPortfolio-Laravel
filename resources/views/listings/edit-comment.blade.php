@@ -5,7 +5,7 @@
                     ><i class="fa-solid fa-arrow-left"></i> Back
     </a>
     <div class="mx-4">
-        <x-card class="p-10" bg-black>
+        <x-card class="p-5" bg-black>
             <div
                 class="flex flex-col items-center justify-center text-center"
             >
@@ -29,10 +29,10 @@
                     <h3 class="text-3xl font-bold mb-4">
                         Project Description
                         
-                    </h3>
+                    </h3> --}}
                     <div class="text-lg space-y-6">
-                        {{$listing->description}}
-                        <hr> --}}
+                        {{-- {{$listing->description}} --}}
+                        {{-- <hr> --}}
                         
                        <form method="POST" action="/comment/{{$comment->id}}" enctype="multipart/form-data">
                         {{-- <form method="POST" action="{{ route('comments.store', $listing->id) }}" enctype="multipart/form-data"> --}}
@@ -56,13 +56,13 @@
                                 </div>
                                 <div class="mt-2 text-right">
                                     <button class="btn btn-primary btn-sm shadow-none" 
-                                        >Post comment</button>
+                                        >Edit comment</button>
                                 </div>
                             </div>
                         </form>
     
-                    {{-- </div>
-                </div> --}}
+                    </div>
+                {{-- </div> --}}
                 
             </div>
         </x-card>
