@@ -22,7 +22,7 @@ class CommentController extends Controller
 
     // Show Create Form
     public function create(Listing $listing, $id){
-        return view('comments.create', [
+        return view('listings.show', [
             'listing' => $listing,
         ]);
     }
@@ -31,7 +31,7 @@ class CommentController extends Controller
     public function store(Request $request,$id, Comment $comment) {
         // dd($id);
         // dd($request->userComment);
-        // $formFields = $request->validate([
+        // $formFields = $request->validate([   
         //     'userComment' => 'nullable',
         // ]);
  
@@ -47,9 +47,11 @@ class CommentController extends Controller
         return redirect('/')->with('message', 'Comment created successfully!');
     }
 
-    public function edit(Comment $comment){
-        dd($comment);
-        return view('comments.edit', ['comment' => $comment]);
+    public function edit(Comment $comment,$id){
+        $comment = $comment->find($id);
+        return view('listings.edit-comment', [
+            'comment' => $comment
+        ]);
     }
 
 
@@ -64,6 +66,8 @@ class CommentController extends Controller
     $formFields['user_id'] = auth()->id();
     $formFields['listing_id'] = $id;
     $formFields['userComment'] = $request->userComment;
+
+    $comment->update($formFields);
 
     }
 }

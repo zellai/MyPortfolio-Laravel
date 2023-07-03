@@ -13,7 +13,6 @@
                             <div class="d-flex flex-row user-info"><img class="rounded-circle" src="https://i.imgur.com/RpzrMR2.jpg" width="40">
                                 <div class="d-flex flex-column justify-content-start ml-2">
                                     <span class="d-flex d-block font-weight-bold name">{{auth()->user()->name}}</span>
-                                    <span class="d-flex date text-black-50">Shared publicly - Jan 2020</span>
                                 </div>
                             </div>
                             <div class="mt-2">
@@ -22,7 +21,7 @@
                             <div class="bg-white">
                                 <div class="d-flex flex-row fs-12">
                                     <td class="px-4 py-8 border-t border-b border-gray-300 text-lg">
-                                        <a href="/listings/edit" class="text-blue-400 px-6 py-2 rounded-xl"><i
+                                        <a href="/edit-comment/{{$comment->id}}" class="text-blue-400 px-6 py-2 rounded-xl"><i
                                             class="fa-solid fa-pen-to-square"></i>
                                           Edit</a>
                                       </td>

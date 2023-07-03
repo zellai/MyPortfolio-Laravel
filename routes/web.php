@@ -92,18 +92,19 @@ Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 
 
 
-// Show Comment Form
-Route::get('/listings/{id}/comment', [CommentController::class, 'create'])->middleware('auth');
 
 // Comment
 Route::post('/listings/{id}/comment', [CommentController::class, 'store'])->middleware('auth');
 
 // Show Edit Comment Form
-Route::get('/listings/{id}/edit', [CommentController::class, 'edit'])->middleware('auth');
+Route::get('/edit-comment/{id}', [CommentController::class, 'edit'])->middleware('auth');
 
 // Update listing
-Route::put('/listings/{id}', [CommentController::class, 'update'])->middleware('auth');
+Route::put('/comment', [CommentController::class, 'update'])->middleware('auth');
 
-// Delete listing
-Route::delete('/listings/{listing}', [CommentController::class, 'destroy'])->middleware('auth');
+// // Delete listing
+// Route::delete('/listings/{listing}', [CommentController::class, 'destroy'])->middleware('auth');
 
+
+// Show Comment Form
+Route::get('/listings/{id}/comment', [CommentController::class, 'create'])->middleware('auth');

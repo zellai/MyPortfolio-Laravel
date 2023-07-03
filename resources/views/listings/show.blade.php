@@ -34,15 +34,15 @@
                     {{$listing->description}}
                     <hr>
                     {{-- {{$listing->id}} --}}
-                    {{-- <form method="POST" action="/listings/{{$listing->id}}/comment" enctype="multipart/form-data">
+                   <form method="POST" action="/listings/{{$listing->id}}/comment" enctype="multipart/form-data">
                     {{-- <form method="POST" action="{{ route('comments.store', $listing->id) }}" enctype="multipart/form-data"> --}}
                         @csrf
                         <div class="bg-light p-2">
                             <td class="px-4 py-8 border-t border-b border-gray-300 text-lg">
-                                <a href="/listings/{{$listing->id}}/comment"><i class="fa fa-message"></i> Comment  
+                                <a><i class="fa fa-message"></i> Comment  
                                 </a>
                             </td>
-                            {{-- <div class="d-flex flex-row align-items-start"><img class="rounded-circle" src="https://i.imgur.com/RpzrMR2.jpg" width="40">
+                            <div class="d-flex flex-row align-items-start"><img class="rounded-circle" src="https://i.imgur.com/RpzrMR2.jpg" width="40">
                                 <textarea class="form-control ml-1 shadow-none textarea"
                                     name="userComment"
                                     rows="1">{{old('userComment')}}
@@ -55,11 +55,12 @@
                             <div class="mt-2 text-right">
                                 <button class="btn btn-primary btn-sm shadow-none" 
                                     >Post comment</button>
-                            </div> --}}
+                            </div>
                         </div>
                     </form>
                     
                     <x-comment-card :comments="$listing->comment"/>
+
 
                     <a
                         href="mailto:{{$listing->email}}"
