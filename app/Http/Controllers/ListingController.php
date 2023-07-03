@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Comment;
 use App\Models\Listing;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\Builder;
-use App\Models\User;
+
 class ListingController extends Controller
 {
     // show all listings
@@ -95,8 +97,9 @@ class ListingController extends Controller
     }
     
     // Delete Listing
-    public function destroy(Listing $listing){
+    public function destroy(Listing $listing, Comment $comment){
         $listing->delete();
+        $comment->delete();
         return redirect('/')->with('message', 'Listing Deleted Successfully');
     }
 

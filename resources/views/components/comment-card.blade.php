@@ -26,7 +26,7 @@
                                           Edit</a>
                                       </td>
                                       <td class="px-4 py-8 border-t border-b border-gray-300 text-lg">
-                                        <form method="POST" action="/listings">
+                                        <form method="POST" action="/edit-comment/{{$comment->id}}">
                                           @csrf
                                           @method('DELETE')
                                           <button class="text-red-500"><i class="fa-solid fa-trash"></i> Delete</button>

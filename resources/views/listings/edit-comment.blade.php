@@ -34,7 +34,7 @@
                         {{$listing->description}}
                         <hr> --}}
                         
-                       <form method="POST" action="/comment" enctype="multipart/form-data">
+                       <form method="POST" action="/comment/{{$comment->id}}" enctype="multipart/form-data">
                         {{-- <form method="POST" action="{{ route('comments.store', $listing->id) }}" enctype="multipart/form-data"> --}}
                             @csrf
                             @method('PUT')
