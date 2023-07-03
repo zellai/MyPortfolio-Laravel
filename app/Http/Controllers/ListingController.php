@@ -6,6 +6,7 @@ use App\Models\Listing;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
+use Illuminate\Database\Eloquent\Builder;
 use App\Models\User;
 class ListingController extends Controller
 {
