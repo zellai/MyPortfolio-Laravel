@@ -83,7 +83,7 @@
                     <li class="nav-link" >
                         <a href="/listings/manage" class="nav-link" data-bs-toggle="tab" aria-selected="false" role="tab" tabindex="-1"
                             ><i class="fa-solid fa-gear"></i>
-                            Manage Listings</a
+                            Manage Projects</a
                         >
                     </li>
                     <li class="nav-link" >
