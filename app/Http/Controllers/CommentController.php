@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Comment;
 use App\Models\Listing;
 use Illuminate\Http\Request;
@@ -13,26 +14,18 @@ use Illuminate\Support\Facades\Auth;
 class CommentController extends Controller
 {
 
-    // Show Comment
-    // public function show(Comment $comment){
-    //     return view('listings.show  ', [
-    //         'comments' => Comment::latest()
-    //     ]);
-    // }
 
     // Show Create Form
-    public function create(Listing $listing, $id){
-        return view('listings.show', [
-            'listing' => $listing,
-            'comments' => Comment::latest()
-        ]);
-    }
+    // public function create($id){
+    //     $comment = Comment::find($id);  
+
+    //     return view('listings.create-comment')->with('comment', $comment);
+    // }
 
     // Comment
     public function store(Request $request,$id, Comment $comment) {
-        // dd($comment);
-         
-        $formFields['user_id'] = auth()->id();
+      
+        $formFields['user_id'] = auth()->user()->id;
         $formFields['listing_id'] = $id;
         $formFields['userComment'] = $request->userComment;
         $formFields['name'] = auth()->user()->name; 
@@ -46,6 +39,7 @@ class CommentController extends Controller
 
     public function edit(Comment $comment,$id, Listing $listing){
         $comment = $comment->find($id);
+        
         return view('listings.edit-comment', [
             'comment' => $comment,
             'listing' => $listing

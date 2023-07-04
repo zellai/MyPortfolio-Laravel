@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Comment;
 use App\Models\Listing;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\Builder;
-use App\Models\User;
+
 class ListingController extends Controller
 {
     // show all listings
@@ -21,10 +23,14 @@ class ListingController extends Controller
 
     //Show single listing
     public function show(Listing $listing){
-        // dd($listing);
+        // dd($listing->comment);
+
+        $comments = Comment::all();
+        // dd($comments->find(1));
         
         return view('listings.show  ', [
             'listing' => $listing,
+            'comments' => $comments
             
         ]);
     }

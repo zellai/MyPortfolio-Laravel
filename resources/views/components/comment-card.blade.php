@@ -1,4 +1,5 @@
 @props(['comments'])
+@props(['listing'])
 
 <x-card>
     @unless(count($comments)==0)

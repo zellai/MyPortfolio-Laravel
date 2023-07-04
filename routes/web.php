@@ -97,7 +97,7 @@ Route::get('/edit-comment/{id}', [CommentController::class, 'edit'])->middleware
 Route::put('/comment/{id}', [CommentController::class, 'update'])->middleware('auth');
 
 // Delete Comment
-Route::delete('/listings/comment/{id}', [CommentController::class, 'destroy'])->middleware('auth');
+Route::delete('/comment/{id}', [CommentController::class, 'destroy'])->middleware('auth');
 
 
 // // Show Comment Form
