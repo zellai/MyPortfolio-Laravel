@@ -12,18 +12,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('comments', function (Blueprint $table) {
-            $table->integer('listing_id')->after('userComment');
-
+            $table->string('name')->after('listing_id');
         });
     }
 
     /**
      * Reverse the migrations.
      */
-    public function down(): void    
+    public function down(): void
     {
         Schema::table('comments', function (Blueprint $table) {
-            $table->dropColumn('userComment')->nullable();
+            $table->dropColumn('listing_id')->nullable();
         });
     }
 };

@@ -3,7 +3,6 @@
 <x-card>
     @unless(count($comments)==0)
     @foreach ($comments as $comment)
-    {{-- <form method="get" action="/listings" enctype="multipart/form-data"> --}}
         <div class="container mt-5">
             <div class="d-flex justify-content-center row">
                 <div class="col-md-8">
@@ -19,13 +18,13 @@
                             </div>
                             <div class="bg-white">
                                 <div class="d-flex flex-row fs-12">
-                                    @if(Auth::user()->id === $comment->user_id)
+                                    
                                     <td class="px-4 py-8 border-t border-b border-gray-300 text-lg">
                                         <a href="/edit-comment/{{$comment->id}}" class="text-blue-400 px-6 py-2 rounded-xl"><i
                                             class="fa-solid fa-pen-to-square"></i>
                                           Edit</a>
                                     </td>
-                                    
+                                    @if(Auth::user()->id === $comment->user_id)
                                     <td class="px-4 py-8 border-t border-b border-gray-300 text-lg">
                                     <form method="POST" action="comment/{{$comment->id}}">
                                         @csrf
@@ -41,7 +40,6 @@
                 </div>
             </div>
         </div>
-    {{-- </form> --}}
     @endforeach
     @endunless
 </x-card>

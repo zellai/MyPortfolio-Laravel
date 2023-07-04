@@ -14,27 +14,28 @@ class CommentController extends Controller
 {
 
     // Show Comment
-    public function show(Comment $comment){
-        // dd($listing);
-        return view('listings.show  ', [
-            'comments' => Comment::latest()
-        ]);
-    }
+    // public function show(Comment $comment){
+    //     return view('listings.show  ', [
+    //         'comments' => Comment::latest()
+    //     ]);
+    // }
 
     // Show Create Form
     public function create(Listing $listing, $id){
         return view('listings.show', [
             'listing' => $listing,
+            'comments' => Comment::latest()
         ]);
     }
 
     // Comment
     public function store(Request $request,$id, Comment $comment) {
-    
+        // dd($comment);
+         
         $formFields['user_id'] = auth()->id();
         $formFields['listing_id'] = $id;
         $formFields['userComment'] = $request->userComment;
-
+        $formFields['name'] = auth()->user()->name; 
 
 
         Comment::create($formFields); 
