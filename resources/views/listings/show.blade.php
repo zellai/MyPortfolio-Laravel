@@ -90,6 +90,14 @@
                                                         </td>
                                                         </form>
                                                         <td class="px-4 py-8 border-t border-b border-gray-300 text-lg">
+                                                            <form method="POST" action="/comment/{{$comment->id}}">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <button type="submit" class="text-red-500"><i class="fa-solid fa-trash"></i> Delete</button>
+                                                            </form>
+                                                            </td>
+                                                        @elseif(Auth::user()->id === $listing->user_id)
+                                                        <td class="px-4 py-8 border-t border-b border-gray-300 text-lg">
                                                         <form method="POST" action="/comment/{{$comment->id}}">
                                                             @csrf
                                                             @method('DELETE')
