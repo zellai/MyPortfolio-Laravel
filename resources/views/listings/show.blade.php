@@ -73,7 +73,7 @@
                                             <div class="bg-white p-2">
                                                 <div class="d-flex flex-row user-info"><img class="rounded-circle" src="https://i.imgur.com/RpzrMR2.jpg" width="40">
                                                     <div class="d-flex flex-column justify-content-start ml-2">
-                                                        <span class="d-flex d-block font-weight-bold name">{{$comment->name}}</span>
+                                                        <span class="d-flex d-block font-weight-bold name">{{$comment->user->name}}</span>
                                                     </div>
                                                 </div>
                                                 <div class="mt-2">

@@ -23,10 +23,9 @@ class ListingController extends Controller
 
     //Show single listing
     public function show(Listing $listing){
-        // dd($listing->comment);
+        // dd($listing->user);
 
         $comments = Comment::all();
-        // dd($comments->find(1));
         
         return view('listings.show  ', [
             'listing' => $listing,
