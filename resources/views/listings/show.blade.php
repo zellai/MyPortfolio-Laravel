@@ -38,6 +38,7 @@
                     {{$listing->description}}
                     <hr>
                     {{-- {{$listing->id}} --}}
+                
                     <form method="POST" action="/listings/{{$listing->id}}/comment" enctype="multipart/form-data">
                     {{-- <form method="POST" action="{{ route('comments.store', $listing->id) }}" enctype="multipart/form-data"> --}}
                         @csrf
@@ -56,15 +57,18 @@
                                 <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                                 @enderror
                             </div>
+
                             <div class="mt-2 text-right">
                                 <button class="btn btn-primary btn-sm shadow-none" 
                                     >Post comment</button>
                             </div>
                         </div>
                     </form>
-                        
+
                         @unless(count($comments)==0)
                         @foreach ($comments as $comment)
+                        {{-- @if ($listing->id === $comment->listing_id) --}}
+                        @if($listing->id === $comment->listing_id )
                         <div>
                             <div class="container mt-5">
                                 <div class="d-flex justify-content-center row">
@@ -96,7 +100,6 @@
                                                                 <button type="submit" class="text-red-500"><i class="fa-solid fa-trash"></i> Delete</button>
                                                             </form>
                                                             </td>
-                                                            
                                                         @elseif(Auth::user()->id === $listing->user_id)
                                                         <td class="px-4 py-8 border-t border-b border-gray-300 text-lg">
                                                         <form method="POST" action="/comment/{{$comment->id}}">
@@ -114,6 +117,7 @@
                                 </div>
                             </div>
                         </div>
+                        @endif
                         @endforeach
                         @endunless
                    
