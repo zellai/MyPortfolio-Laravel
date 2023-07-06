@@ -24,8 +24,17 @@
             <div class="text-lg my-4">
                 <i class="fa-solid fa-location-dot"></i> {{$listing->location}}
             </div>
-            <div class="text-lg my-4">
-                <p>Author: {{$listing->user->name}} </p> 
+            <div>
+                <img 
+                    class="rounded-circle border border-dark" 
+                    src="{{$listing->image ? asset('storage/' . $listing->image) : asset('images/default-image.jpg')}}" 
+                    width="80">
+            </div>
+            <div class="d-flex flex-row user-info">
+                
+                <div class="d-flex flex-column justify-content-start ml-2">
+                    <span class="d-flex d-block font-weight-bold name">{{$listing->user->name}}</span>
+                </div>
             </div>
 
             <div class="border border-gray-200 w-full mb-6"></div>

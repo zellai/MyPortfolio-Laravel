@@ -1,18 +1,19 @@
 <x-layout>
 
 
-<div class="container">
+<div class="container bg-secondary">
     <div class="row">
-        <section class="col relative h-72 flex flex-col justify-center align-center space-y-4 mb-4">
+        <section class="col-4 relative h-72 flex flex-col justify-center align-center space-y-4 mb-4">
             <div
                 class="col absolute top-0 left-0 w-full h-full opacity-80 bg-no-repeat bg-center rounded"
                 style="background-image: url('images/background.jpg'); padding:8rem;"
             >   
-            <img class="rounded-circle mx-auto d-block img-circle" style="height: 18rem;"src="{{asset('images/mypicture.jpg')}}" alt="image">
+            <img class="rounded-circle border border-dark mx-auto d-block img-circle" 
+                 style="height: 18rem;"src="{{asset('images/mypicture.jpg')}}" alt="image">
             </div>
         </section>
 
-        <div class="col card border-dark relative space-y-4 bg-light mb-4" style="max-width: 70rem; padding: 6rem;">  
+        <div class="col card text-light relative space-y-4 bg-secondary mb-4" style="max-width: 70rem; padding: 6rem;">  
             <div class="card-header">About Me</div>
                     <p>Greetings! I am an enthusiastic software engineer with a diverse background in electronics engineering and teaching. 
                         While I consider myself a beginner in the software engineering field, I am eager to learn and grow, constantly seeking opportunities to enhance my skills. 
@@ -28,7 +29,6 @@
                     <p>I approach every project with a strong work ethic, a willingness to learn, and a passion for problem-solving. As a beginner, I understand the importance of collaborating with experienced professionals and learning from their expertise. I actively seek mentorship opportunities and engage with online communities to accelerate my learning process.</p>
                     <p>While I may be a beginner, I am confident that my background in electronics engineering, teaching experience, and foundational skills in Laravel, HTML, Bootstrap, MySQL, and Python make me a valuable asset to any team. I am eager to contribute to meaningful projects, expand my knowledge, and grow as a software engineer.</p>
                     <p>If you are looking for a dedicated and motivated beginner with a strong desire to learn and contribute, I would be thrilled to connect and explore how we can collaborate to achieve our goals. Let's embark on this exciting journey together!</p>
-                        {{-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> --}}
                 </div>
             </div>
         </div>

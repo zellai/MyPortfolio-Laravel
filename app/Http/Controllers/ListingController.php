@@ -40,7 +40,8 @@ class ListingController extends Controller
     }
 
      // Store Listing Data
-     public function store(Request $request) {   
+     public function store(Request $request) {  
+        // dd($request->file('image')); 
         $formFields = $request->validate([
             'title' => 'required',
             'company' => ['required', Rule::unique('listings', 'company')],
@@ -53,6 +54,10 @@ class ListingController extends Controller
  
         if($request->hasFile('logo')) {
             $formFields['logo'] = $request->file('logo')->store('logos', 'public');
+        }
+
+        if($request->hasFile('image')) {
+            $formFields['image'] = $request->file('image')->store('images', 'public');
         }
 
 
@@ -90,6 +95,10 @@ class ListingController extends Controller
 
     if($request->hasFile('logo')) {
         $formFields['logo'] = $request->file('logo')->store('logos', 'public');
+    }
+
+    if($request->hasFile('image')) {
+        $formFields['image'] = $request->file('image')->store('images', 'public');
     }
 
     // $formFields['user_id'] = auth()->id();

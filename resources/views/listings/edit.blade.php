@@ -141,6 +141,28 @@
         </div>
 
         <div class="mb-6">
+            <label for="image" class="inline-block text-lg mb-2">
+                Author Image
+            </label>
+            <input
+                type="file"
+                class="border border-gray-200 rounded p-2 w-full"
+                name="image"
+            />
+
+            <img
+                class="w-48 mr-6 mb-6"
+                src="{{$listing->image ? asset('storage/' . $listing->image) : asset('/images/default-image.jpg')}}"
+                alt=""
+            />
+
+            @error('image')
+            <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+            @enderror
+            
+        </div>
+
+        <div class="mb-6">
             <label
                 for="description"
                 class="inline-block text-lg mb-2"

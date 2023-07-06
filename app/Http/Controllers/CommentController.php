@@ -69,6 +69,7 @@ class CommentController extends Controller
     
 
         $comment = Comment::findOrFail($id);
+        
         $listing->user_id = auth()->user()->id;
         // dd(auth()->user()->id);
     
