@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\Listing as Authenticatable;
 
 
@@ -31,8 +32,9 @@ class Listing extends Model
     }
 
     // Relationship to Comment
-    public function comment() {
-        return $this->hasMany(Comment::class, 'listing_id');
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
     }
 }
     

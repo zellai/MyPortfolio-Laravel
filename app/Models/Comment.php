@@ -16,10 +16,12 @@ class Comment extends Model
     ];
 
     // Relationship to listing
-    public function listings() {
-        return $this->belongsTo(Listing::class, 'listing_id');
+    public function listing()
+    {
+        return $this->belongsTo(Listing::class);
     }
 
+    // Relationship to User
     public function user(): BelongsTo
     {
     return $this->belongsTo(User::class);

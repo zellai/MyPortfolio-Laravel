@@ -76,22 +76,30 @@
 
                         @unless(count($comments)==0)
                         @foreach ($comments as $comment)
-                        {{-- @if ($listing->id === $comment->listing_id) --}}
-                        @if($listing->id === $comment->listing_id )
+                        @if($listing->id === $comment->listing_id)
                         <div>
                             <div class="container mt-5">
                                 <div class="d-flex justify-content-center row">
                                     <div class="col-md-8">
                                         <div class="d-flex flex-column comment-section">
                                             <div class="bg-white p-2">
-                                                <div class="d-flex flex-row user-info"><img class="rounded-circle" src="https://i.imgur.com/RpzrMR2.jpg" width="40">
+                                            
+                                                <div class="d-flex flex-row user-info">
+                                                    <img 
+                                                        class="rounded-circle border border-dark" 
+                                                        src="{{$listing->image ? asset('storage/' . $listing->image) : asset('images/default-image.jpg')}}" 
+                                                        width="40"
+                                                    >
                                                     <div class="d-flex flex-column justify-content-start ml-2">
                                                         <span class="d-flex d-block font-weight-bold name">{{$comment->user->name}}</span>
                                                     </div>
                                                 </div>
+                                                
+
                                                 <div class="mt-2">
                                                     <p class="d-flex comment-text">{{$comment->userComment}}</p>    
                                                 </div>
+
                                                 <div class="bg-white">
                                                     <div class="d-flex flex-row fs-12">
                                                         @if(Auth::user()->id === $comment->user_id)
@@ -119,6 +127,7 @@
                                                         </td>
                                                         @endif                              
                                                     </div>
+
                                                 </div>                    
                                             </div>
                                         </div>
