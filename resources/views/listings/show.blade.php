@@ -56,7 +56,30 @@
                                 <a><i class="fa fa-message"></i> Comment  
                                 </a>
                             </td>
-                             <div class="d-flex flex-row align-items-start"><img class="rounded-circle" src="https://i.imgur.com/RpzrMR2.jpg" width="40">
+                            {{-- <div>
+                                
+                                <label for="image" class="inline-block text-lg mb-4">
+                                    Author Image
+                                </label>
+                                <input
+                                    type="file"
+                                    class="border border-gray-200 rounded p-2"
+                                    name="image"
+                                />
+                    
+                                @error('image')
+                                <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                                @enderror
+                            
+                            </div> --}}
+                             <div class="d-flex flex-row align-items-start">
+                                
+
+                                <img class="rounded-circle" 
+                                    src="{{auth()->user()->userImage ? asset('storage/' . auth()->user()->userImage) : asset('Images/default-image.jpg')}}" 
+                                    width="40"
+                                >
+
                                 <textarea class="form-control ml-1 shadow-none textarea"
                                     name="userComment"
                                     rows="1">{{old('userComment')}}
@@ -85,11 +108,13 @@
                                             <div class="bg-white p-2">
                                             
                                                 <div class="d-flex flex-row user-info">
+                                                    
                                                     <img 
                                                         class="rounded-circle border border-dark" 
-                                                        src="{{$listing->image ? asset('storage/' . $listing->image) : asset('images/default-image.jpg')}}" 
+                                                        src="{{$comment->user->userImage ? asset('storage/' . $comment->user->userImage) : asset('Images/default-image.jpg')}}" 
                                                         width="40"
                                                     >
+                                                    
                                                     <div class="d-flex flex-column justify-content-start ml-2">
                                                         <span class="d-flex d-block font-weight-bold name">{{$comment->user->name}}</span>
                                                     </div>

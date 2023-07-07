@@ -50,13 +50,23 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+                
                 <ul class="navbar-nav me-auto" role="tablist">
                     @auth
+                    <li>
+                        <div>
+                        <img 
+                            class="rounded-circle border border-dark" 
+                            src="{{auth()->user()->userImage ? asset('storage/' . auth()->user()->userImage) : asset('Images/default-image.jpg')}}" 
+                            width="80">
+                        </div>
+                    </li>
                     <li class="navbar-brand relative">
                         <span class="nav-link" data-bs-toggle="tab" href="/" aria-selected="false" role="tab" tabindex="-1">
-                        Welcome {{auth()->user()->name}}
+                        Welcome {{auth()->user()->name}}    
                         </span>
                     </li>
+                   
                     <li class="nav-link" >
                         <a class="nav-link" data-bs-toggle="tab" href="/" aria-selected="false" role="tab" tabindex="-1">
                         Home
@@ -104,6 +114,7 @@
                         </button>
                         </form>
                     </li>
+                    
                     
                     @else
                     <li class="nav-link" >

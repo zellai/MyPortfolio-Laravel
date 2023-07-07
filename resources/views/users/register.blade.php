@@ -9,7 +9,7 @@
         <p class="mb-4">Create an account to post comments</p>
     </header>
 
-    <form method="POST" action="/users">
+    <form method="POST" action="/users" enctype="multipart/form-data">
         @csrf
         <div class="mb-6">
             <label for="name" class="inline-block text-lg mb-2">
@@ -76,6 +76,25 @@
             @error('password_confirmation')
                 <p class="text-red-500 text-xs mt-1">{{$message}}</p>
             @enderror
+        </div>
+
+        <div class="mb-6">
+            <label 
+                for="userImage" 
+                class="inline-block text-lg mb-2"
+            >
+                Upload Photo
+            </label>
+            <input
+                type="file"
+                class="border border-gray-200 rounded p-2 w-full"
+                name="userImage"
+            />
+
+            @error('userImage')
+            <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+            @enderror
+            
         </div>
 
         <div class="mb-6">

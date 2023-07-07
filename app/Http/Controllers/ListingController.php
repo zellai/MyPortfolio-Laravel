@@ -22,16 +22,17 @@ class ListingController extends Controller
     }
 
     //Show single listing
-    public function show(Listing $listing){
+    public function show(Listing $listing, Comment $comment){
       
-        $comments = Comment::all();
-       
+        // $comments = Comment::all();
         
         return view('listings.show  ', [
             'listing' => $listing,
-            'comments' => $comments
+            'comments' => Comment::all()
+            
 
         ]);
+
     }
 
     // Show Create Form
@@ -41,7 +42,7 @@ class ListingController extends Controller
 
      // Store Listing Data
      public function store(Request $request) {  
-        // dd($request->file('image')); 
+        dd($request->file('image')); 
         $formFields = $request->validate([
             'title' => 'required',
             'company' => ['required', Rule::unique('listings', 'company')],

@@ -71,6 +71,13 @@ Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 // Create New User
 Route::post('/users', [UserController::class, 'store']);
 
+// Show Edit Form
+Route::post('/users/{user}/edit', [UserController::class, 'edit'])->middleware('auth');
+
+// Update User Info
+Route::put('/users/{user}/edit', [UserController::class, 'update'])->middleware('auth');
+
+
 // Log User Out
 Route::post('/logout', [UserController::class, 'logout']);
 

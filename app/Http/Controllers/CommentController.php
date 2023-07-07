@@ -28,7 +28,11 @@ class CommentController extends Controller
         $formFields['user_id'] = auth()->user()->id;
         $formFields['listing_id'] = $id;
         $formFields['userComment'] = $request->userComment;
-        $formFields['name'] = auth()->user()->name; 
+        // $formFields['name'] = auth()->user()->name; 
+
+        if($request->hasFile('commentImage')) {
+            $formFields['commentImage'] = $request->file('commentImage')->store('commentImages', 'public');
+        }
 
 
         Comment::create($formFields); 
@@ -57,6 +61,10 @@ class CommentController extends Controller
 
     $comment = Comment::findOrFail($id);
     $comment->userComment = $request->input('userComment');
+
+    if($request->hasFile('commentImage')) {
+        $formFields['commentImage'] = $request->file('commentImage')->store('commentImages', 'public');
+    }
     // ... additional validation or updates as needed
     $comment->save();
 
