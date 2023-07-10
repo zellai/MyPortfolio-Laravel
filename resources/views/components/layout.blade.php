@@ -105,14 +105,12 @@
                         </button>
                         </form>
                     </li>
+                   
                     <li class="nav-link" >
-                        <form class="nav-link" data-bs-toggle="tab" aria-selected="false" role="tab" tabindex="-1">
-                        @csrf
-                        <button type="submit" href="https://www.facebook.com/ezel.i.mozo">
-                            <i class="fa-brands fa-facebook"></i>
-
-                        </button>
-                        </form>
+                        <a class="nav-link" href="/users/{{auth()->user()->id}}/edit"  data-bs-toggle="tab" aria-selected="false" role="tab" tabindex="-1">
+                            <i class="fa-solid fa-gear" ></i>
+                            Settings
+                        </a>
                     </li>
                     
                     

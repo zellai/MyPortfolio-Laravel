@@ -72,10 +72,10 @@ Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 Route::post('/users', [UserController::class, 'store']);
 
 // Show Edit Form
-Route::post('/users/{user}/edit', [UserController::class, 'edit'])->middleware('auth');
+Route::get('/users/{user}/edit', [UserController::class, 'edit'])->middleware('auth');
 
 // Update User Info
-Route::put('/users/{user}/edit', [UserController::class, 'update'])->middleware('auth');
+Route::put('/users/{user}', [UserController::class, 'update'])->middleware('auth');
 
 
 // Log User Out

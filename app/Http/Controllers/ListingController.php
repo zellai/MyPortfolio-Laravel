@@ -14,7 +14,7 @@ class ListingController extends Controller
 {
     // show all listings
     public function index(){
-        // dd(auth()->user());
+        // dd($user);
         return view('listings.projects', [
             'heading' => 'Latest Listings',
             'listings' => Listing::latest()->filter(request(['tag','search']))->paginate(6)
@@ -57,10 +57,6 @@ class ListingController extends Controller
             $formFields['logo'] = $request->file('logo')->store('logos', 'public');
         }
 
-        if($request->hasFile('image')) {
-            $formFields['image'] = $request->file('image')->store('images', 'public');
-        }
-
 
         $formFields['user_id'] = auth()->id();
 
@@ -98,9 +94,6 @@ class ListingController extends Controller
         $formFields['logo'] = $request->file('logo')->store('logos', 'public');
     }
 
-    if($request->hasFile('image')) {
-        $formFields['image'] = $request->file('image')->store('images', 'public');
-    }
 
     // $formFields['user_id'] = auth()->id();
  

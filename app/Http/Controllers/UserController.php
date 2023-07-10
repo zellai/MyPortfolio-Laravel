@@ -40,6 +40,35 @@ class UserController extends Controller
         return redirect('/')->with('message', 'User created and logged in');
     }
 
+     // Show Edit Form
+     public function edit(User $user){
+        return view('users.edit', ['user' => $user]);
+    }
+
+    // Update User Data
+    public function update(Request $request, User $user) {
+
+
+    $formFields = $request->validate([
+        'name' => ['required', 'min:3'],
+        'email' => ['required','email'],
+        'password' => 'required|confirmed|min:6'
+    ]);
+
+    if($request->hasFile('userImage')) {
+        $formFields['userImage'] = $request->file('userImage')->store('photos', 'public');
+    }
+
+    //Hash Password
+    $formFields['password'] = bcrypt($formFields['password']); 
+
+    // $formFields['user_id'] = auth()->id();
+ 
+    $user->update($formFields); 
+
+    return back()->with('message', 'User updated successfully!');
+    }
+
     //Log out User
     public function logout(Request $request){
         auth()->logout();
