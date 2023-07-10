@@ -27,7 +27,7 @@
             <div>
                 <img 
                     class="rounded-circle border border-dark" 
-                    src="{{$listing->image ? asset('storage/' . $listing->image) : asset('images/default-image.jpg')}}" 
+                    src="{{$listing->user->userImage ? asset('storage/' . $listing->user->userImage) : asset('images/default-image.jpg')}}" 
                     width="80">
             </div>
             <div class="d-flex flex-row user-info">
