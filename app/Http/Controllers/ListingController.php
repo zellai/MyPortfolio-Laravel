@@ -15,21 +15,21 @@ class ListingController extends Controller
     // show all listings
     public function index(){
         // dd($user);
-        return view('listings.projects', [
+        return view('listings.index', [
             'heading' => 'Latest Listings',
-            'listings' => Listing::latest()->filter(request(['tag','search']))->paginate(6)
+            // 'listings' => Listing::latest()->filter(request(['tag','search']))->paginate(6)
         ]);
     }
 
     //Show single listing
     public function show(Listing $listing, Comment $comment){
-      
+
         // $comments = Comment::all();
-        
+
         return view('listings.show  ', [
             'listing' => $listing,
             'comments' => Comment::all()
-            
+
 
         ]);
 
@@ -41,8 +41,8 @@ class ListingController extends Controller
     }
 
      // Store Listing Data
-     public function store(Request $request) {  
-        // dd($request->file('image')); 
+     public function store(Request $request) {
+        // dd($request->file('image'));
         $formFields = $request->validate([
             'title' => 'required',
             'company' => ['required', Rule::unique('listings', 'company')],
@@ -52,19 +52,19 @@ class ListingController extends Controller
             'tags' => 'required',
             'description' => 'required'
         ]);
- 
+
         if($request->hasFile('logo')) {
             $formFields['logo'] = $request->file('logo')->store('logos', 'public');
         }
 
         $formFields['user_id'] = auth()->id();
 
-        Listing::create($formFields); 
+        Listing::create($formFields);
 
 
         return redirect('/')->with('message', 'Listing created successfully!');
     }
-    
+
     // Show Edit Form
     public function edit(Listing $listing){
         return view('listings.edit', ['listing' => $listing]);
@@ -95,12 +95,12 @@ class ListingController extends Controller
 
 
     // $formFields['user_id'] = auth()->id();
- 
-    $listing->update($formFields); 
+
+    $listing->update($formFields);
 
     return back()->with('message', 'Listing updated successfully!');
     }
-    
+
     // Delete Listing
     public function destroy(Listing $listing){
         $listing->delete();

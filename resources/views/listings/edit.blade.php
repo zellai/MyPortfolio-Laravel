@@ -3,7 +3,7 @@
     <x-card class="p-10 max-w-lg mx-auto mt-24">
         <header class="text-center">
             <h2 class="text-2xl font-bold uppercase mb-1">
-                Edit Gig
+                Edit Project
             </h2>
             <p class="mb-4">Edit: {{$listing->title}}</p>
         </header>
@@ -30,9 +30,9 @@
         </div>
 
         <div class="mb-6">
-            <label for="title" class="inline-block text-lg mb-2"
-                >Job Title</label
-            >
+            <label for="title" class="inline-block text-lg mb-2">
+                Job Title
+            </label>
             <input
                 type="text"
                 class="border border-gray-200 rounded p-2 w-full"
@@ -47,11 +47,9 @@
         </div>
 
         <div class="mb-6">
-            <label
-                for="location"
-                class="inline-block text-lg mb-2"
-                >Job Location</label
-            >
+            <label for="location" class="inline-block text-lg mb-2">
+                Job Location
+            </label>
             <input
                 type="text"
                 class="border border-gray-200 rounded p-2 w-full"
@@ -66,9 +64,9 @@
         </div>
 
         <div class="mb-6">
-            <label for="email" class="inline-block text-lg mb-2"
-                >Contact Email</label
-            >
+            <label for="email" class="inline-block text-lg mb-2">
+                Contact Email
+            </label>
             <input
                 type="text"
                 class="border border-gray-200 rounded p-2 w-full"
@@ -82,10 +80,7 @@
         </div>
 
         <div class="mb-6">
-            <label
-                for="website"
-                class="inline-block text-lg mb-2"
-            >
+            <label for="website" class="inline-block text-lg mb-2">
                 Website/Application URL
             </label>
             <input
@@ -120,7 +115,7 @@
 
         <div class="mb-6">
             <label for="logo" class="inline-block text-lg mb-2">
-                Company Logo
+                Project Snippet
             </label>
             <input
                 type="file"
@@ -137,7 +132,7 @@
             @error('logo')
             <p class="text-red-500 text-xs mt-1">{{$message}}</p>
             @enderror
-            
+
         </div>
 
         <div class="mb-6">
@@ -152,7 +147,7 @@
                 name="description"
                 rows="10"
                 placeholder="Include tasks, requirements, salary, etc"
-                
+
             >{{$listing->description}}</textarea>
 
             @error('description')
