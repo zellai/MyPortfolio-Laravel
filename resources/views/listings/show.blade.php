@@ -18,20 +18,20 @@
 
             <h3 class="text-2xl mb-2">{{$listing->title}}</h3>
             <div class="text-xl font-bold mb-4">{{$listing->company}}</div>
-            
+
             <x-listing-tags :tagsCsv="$listing->tags" />
-            
+
             <div class="text-lg my-4">
                 <i class="fa-solid fa-location-dot"></i> {{$listing->location}}
             </div>
             <div>
-                <img 
-                    class="rounded-circle border border-dark" 
-                    src="{{$listing->user->userImage ? asset('storage/' . $listing->user->userImage) : asset('images/default-image.jpg')}}" 
+                <img
+                    class="rounded-circle border border-dark"
+                    src="{{$listing->user->userImage ? asset('storage/' . $listing->user->userImage) : asset('images/default-image.jpg')}}"
                     width="80">
             </div>
             <div class="d-flex flex-row user-info">
-                
+
                 <div class="d-flex flex-column justify-content-start ml-2">
                     <span class="d-flex d-block font-weight-bold name">{{$listing->user->name}}</span>
                 </div>
@@ -41,23 +41,23 @@
             <div>
                 <h3 class="text-3xl font-bold mb-4">
                     Project Description
-                    
+
                 </h3>
                 <div class="text-lg space-y-6">
                     {{$listing->description}}
                     <hr>
                     {{-- {{$listing->id}} --}}
-                
+
                     <form method="POST" action="/listings/{{$listing->id}}/comment" enctype="multipart/form-data">
                     {{-- <form method="POST" action="{{ route('comments.store', $listing->id) }}" enctype="multipart/form-data"> --}}
                         @csrf
                         <div class="bg-light p-2">
                             <td class="px-4 py-8 border-t border-b border-gray-300 text-lg">
-                                <a><i class="fa fa-message"></i> Comment  
+                                <a><i class="fa fa-message"></i> Comment
                                 </a>
                             </td>
                             {{-- <div>
-                                
+
                                 <label for="image" class="inline-block text-lg mb-4">
                                     Author Image
                                 </label>
@@ -66,17 +66,17 @@
                                     class="border border-gray-200 rounded p-2"
                                     name="image"
                                 />
-                    
+
                                 @error('image')
                                 <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                                 @enderror
-                            
+
                             </div> --}}
                              <div class="d-flex flex-row align-items-start">
-                                
 
-                                <img class="rounded-circle" 
-                                    src="{{auth()->user()->userImage ? asset('storage/' . auth()->user()->userImage) : asset('Images/default-image.jpg')}}" 
+
+                                <img class="rounded-circle"
+                                    src="{{auth()->user()->userImage ? asset('storage/' . auth()->user()->userImage) : asset('Images/default-image.jpg')}}"
                                     width="40"
                                 >
 
@@ -91,7 +91,7 @@
                             </div>
 
                             <div class="mt-2 text-right">
-                                <button class="btn btn-primary btn-sm shadow-none" 
+                                <button class="btn btn-primary btn-sm shadow-none"
                                     >Post comment</button>
                             </div>
                         </div>
@@ -106,23 +106,23 @@
                                     <div class="col-md-8">
                                         <div class="d-flex flex-column comment-section">
                                             <div class="bg-white p-2">
-                                            
+
                                                 <div class="d-flex flex-row user-info">
-                                                    
-                                                    <img 
-                                                        class="rounded-circle border border-dark" 
-                                                        src="{{$comment->user->userImage ? asset('storage/' . $comment->user->userImage) : asset('Images/default-image.jpg')}}" 
+
+                                                    <img
+                                                        class="rounded-circle border border-dark"
+                                                        src="{{$comment->user->userImage ? asset('storage/' . $comment->user->userImage) : asset('Images/default-image.jpg')}}"
                                                         width="40"
                                                     >
-                                                    
+
                                                     <div class="d-flex flex-column justify-content-start ml-2">
                                                         <span class="d-flex d-block font-weight-bold name">{{$comment->user->name}}</span>
                                                     </div>
                                                 </div>
-                                                
+
 
                                                 <div class="mt-2">
-                                                    <p class="d-flex comment-text">{{$comment->userComment}}</p>    
+                                                    <p class="d-flex comment-text">{{$comment->userComment}}</p>
                                                 </div>
 
                                                 <div class="bg-white">
@@ -150,10 +150,10 @@
                                                             <button type="submit" class="text-red-500"><i class="fa-solid fa-trash"></i> Delete</button>
                                                         </form>
                                                         </td>
-                                                        @endif                              
+                                                        @endif
                                                     </div>
 
-                                                </div>                    
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -163,28 +163,23 @@
                         @endif
                         @endforeach
                         @endunless
-                   
 
-                    <a
-                        href="mailto:{{$listing->email}}"
-                        class="block bg-laravel text-white mt-6 py-2 rounded-xl hover:opacity-80"
-                        ><i class="fa-solid fa-envelope"></i>
-                        Contact Me</a
-                    >
 
-                    <a
-                        href="{{$listing->website}}"
-                        target="_blank"
-                        class="block bg-black text-white py-2 rounded-xl hover:opacity-80"
-                        ><i class="fa-solid fa-globe"></i> Visit
-                        Website</a
-                    >
+                    <a href="mailto:{{$listing->email}}" class="block bg-laravel text-white mt-6 py-2 rounded-xl hover:opacity-80">
+                        <i class="fa-solid fa-envelope"></i>
+                        Contact Me
+                    </a>
+
+                    <a accesskey=""href="{{$listing->website}}" target="_blank" class="block bg-black text-white py-2 rounded-xl hover:opacity-80">
+                        <i class="fa-solid fa-globe"></i>
+                        Visit Website
+                    </a>
                 </div>
             </div>
-            
+
         </div>
     </x-card>
-    
+
 
     {{-- <x-card class="mt-4 p-2 flex space-x-6">
         <a href="/lsapp/public/listings/{{$listing->id}}/edit">

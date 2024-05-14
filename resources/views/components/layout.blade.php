@@ -43,7 +43,7 @@
     <title>MyBlog | Ezel M. Espera</title>
 </head>
 <body class="mb-48">
-    <nav class="fixed-top navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+    <nav class="fixed-top navbar navbar-expand-lg bg-dark border-bottom border-secondary" data-bs-theme="dark">
         <div class="container-fluid d-flex justify-content-between align-items-center">
             {{-- <a href="/"
                 ><img class="w-24" src="{{asset('images/Ezel-logo.png')}}" alt="" class="logo"

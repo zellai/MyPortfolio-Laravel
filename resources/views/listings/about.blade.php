@@ -12,6 +12,26 @@
                 <div class="flex flex-col justify-center align-center pt-4">
                     <h1 style="color: white; text-align: center; font-size: 2.5rem">Ezel M. Espera</h1>
                     <h1 style="color: white; text-align: center; font-size: 2rem; padding: 10px">Aspiring Software Engineer</h1>
+                    <a href="https://twitter.com/EzelMozo" class="text-white mt-6 py-2 rounded-xl hover:opacity-80" >
+                        <i class="fa-brands fa-twitter fa-3x"></i>
+                        @EzelMozo
+                    </a>
+                    <a href="https://www.facebook.com/ezel.i.mozo" class="text-white mt-6 py-2 rounded-xl hover:opacity-80" >
+                        <i class="fa-brands fa-facebook fa-3x"></i>
+                        ezel.i.mozo
+                    </a>
+                    <a href="https://www.instagram.com/ezelmozo/" class="text-white mt-6 py-2 rounded-xl hover:opacity-80" >
+                        <i class="fa-brands fa-instagram fa-3x"></i>
+                        ezelmozo
+                    </a>
+                    <a href="https://www.linkedin.com/in/ezel-espera-30a9b6200/" class="text-white mt-6 py-2 rounded-xl hover:opacity-80" >
+                        <i class="fa-brands fa-linkedin fa-3x"></i>
+                        ezel-espera
+                    </a>
+                    <a href="https://github.com/zellai" class="text-white mt-6 py-2 rounded-xl hover:opacity-80" >
+                        <i class="fa-brands fa-github fa-3x"></i>
+                        zellai
+                    </a>
                 </div>
             </div>
 
