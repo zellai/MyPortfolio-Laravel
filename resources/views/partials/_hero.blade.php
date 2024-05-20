@@ -1,5 +1,5 @@
 
-<section class="top-12 mt-10 relative h-72 flex flex-col justify-center bg-dark align-center text-center space-y-4 mb-4">
+<section class="relative h-72 flex flex-col justify-center bg-dark align-center text-center space-y-4 mb-1">
     <!-- Home background
     Author: Ezel M. Espera -->
     <div
@@ -9,7 +9,7 @@
 
     <div class="z-10">
         <h1 class="text-6xl font-bold uppercase text-white">
-            Hi,<span class="text-black"> I'm Ezel,</span>
+            Hi,<span class="text-danger"> I'm Ezel,</span>
         </h1>
         <p class="text-2xl text-gray-200 font-bold my-4">
             Aspiring Software Engineer

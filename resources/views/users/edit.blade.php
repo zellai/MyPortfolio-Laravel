@@ -4,11 +4,11 @@
     >
         <header class="text-center">
             <h2 class="text-2xl font-bold uppercase mb-1">
-                Register
+                Edit Account Info
             </h2>
-            <p class="mb-4">Create an account to post comments</p>
+            <p class="mb-4">Edit your account and upload image(optional)</p>
         </header>
-    
+
         <form method="POST" action="/users/{{auth()->user()->id}}" enctype="multipart/form-data">
             @csrf
             @method('PUT')
@@ -22,12 +22,12 @@
                     name="name"
                     value= "{{$user->name}}"
                 />
-    
+
                 @error('name')
                     <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                 @enderror
             </div>
-    
+
             <div class="mb-6">
                 <label for="email" class="inline-block text-lg mb-2"
                     >Email</label
@@ -42,7 +42,7 @@
                     <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                 @enderror
             </div>
-    
+
             <div class="mb-6">
                 <label
                     for="password"
@@ -60,7 +60,7 @@
                     <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                 @enderror
             </div>
-    
+
             <div class="mb-6">
                 <label
                     for="password2"
@@ -78,10 +78,10 @@
                     <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                 @enderror
             </div>
-    
+
             <div class="mb-6">
-                <label 
-                    for="userImage" 
+                <label
+                    for="userImage"
                     class="inline-block text-lg mb-2"
                 >
                     Upload Photo
@@ -91,31 +91,27 @@
                     class="border border-gray-200 rounded p-2 w-full"
                     name="userImage"
                 />
-    
+
                 @error('userImage')
                 <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                 @enderror
-                
+
             </div>
-    
-            <div class="mb-6">
+
+            <div class="mb-6 row justify-content-between">
                 <button
                     type="submit"
-                    class="bg-laravel text-white rounded py-2 px-4 hover:bg-black"
+                    class="bg-primary text-white rounded py-2 px-4 hover:bg-black col-3 ms-3"
                 >
-                    Sign Up
+                    Update
                 </button>
-            </div>
-    
-            <div class="mt-8">
-                <p>
-                    Already have an account?
-                    <a href="/login" class="text-laravel"
-                        >Login</a
-                    >
-                </p>
+                <button
+                    href="/home"
+                    class="bg-laravel text-white rounded py-2 px-4 hover:bg-black col-3 me-3"
+                >
+                    Cancel
+                </button>
             </div>
         </form>
     </div>
     </x-layout>
-    

@@ -43,11 +43,11 @@
     <title>MyBlog | Ezel M. Espera</title>
 </head>
 <body class="mb-48">
-    <nav class="fixed-top navbar navbar-expand-lg bg-dark border-bottom border-secondary" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg bg-dark border-bottom border-secondary" data-bs-theme="dark">
         <div class="container-fluid d-flex justify-content-between align-items-center">
-            {{-- <a href="/"
-                ><img class="w-24" src="{{asset('images/Ezel-logo.png')}}" alt="" class="logo"
-            /></a> --}}
+            <!-- <a href="/">
+                <img class="w-24" src="{{asset('images/Ezel-logo.png')}}" alt="" class="logo"/>
+            </a> -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -56,39 +56,37 @@
                 @auth
                 <li>
                     <div>
-                        <img
-                            class="rounded-circle border border-dark"
-                            src="{{auth()->user()->userImage ? asset('storage/' . auth()->user()->userImage) : asset('Images/default-image.jpg')}}"
-                            width="80" />
+                    <img
+                        class="rounded-circle border border-dark"
+                        src="{{ auth()->user()->userImage ? asset('storage/' . auth()->user()->userImage) : asset('Images/default-image.jpg') }}"
+                        width="80" />
                     </div>
                 </li>
                 <li class="navbar-brand relative">
                     <span class="nav-link" data-bs-toggle="tab" href="/" aria-selected="false" role="tab" tabindex="-1">
-                    Welcome {{auth()->user()->name}}
+                        Welcome {{auth()->user()->name}}
                     </span>
                 </li>
 
                 <li class="nav-link" >
                     <a class="nav-link" data-bs-toggle="tab" href="/" aria-selected="false" role="tab" tabindex="-1">
-                    Home
+                        Home
                     </a>
                 </li>
                 <li class="nav-link" >
                     <a class="nav-link" data-bs-toggle="tab" href="/listings/about" aria-selected="false" role="tab" tabindex="-1" >
-                    About
+                        About
                     </a>
                 </li>
                 <li class="nav-link" >
-                    <a href="/listings/experience" class="nav-link" data-bs-toggle="tab" aria-selected="false" role="tab" tabindex="-1"
-                        >
-                        Experience</a
-                    >
+                    <a href="/listings/experience" class="nav-link" data-bs-toggle="tab" aria-selected="false" role="tab" tabindex="-1">
+                        Experience
+                    </a>
                 </li>
                 <li class="nav-link" >
-                    <a href="/listings/projects" class="nav-link" data-bs-toggle="tab" aria-selected="false" role="tab" tabindex="-1""
-                        >
-                        Projects</a
-                    >
+                    <a href="/listings/projects" class="nav-link" data-bs-toggle="tab" aria-selected="false" role="tab" tabindex="-1">
+                        Projects
+                    </a>
                 </li>
 
                 <li class="nav-link" >
@@ -100,13 +98,11 @@
                 <li class="nav-link" >
                     <form class="nav-link" data-bs-toggle="tab" aria-selected="false" role="tab" tabindex="-1" method="POST" action="{{url('/logout')}}">
                     @csrf
-                    <button type="submit">
-                        <i class="fa-solid fa-door-closed"></i> Logout
-
-                    </button>
+                        <button type="submit">
+                            <i class="fa-solid fa-door-closed"></i> Logout
+                        </button>
                     </form>
                 </li>
-
                 <li class="nav-link" >
                     <a class="nav-link" href="/users/{{auth()->user()->id}}/edit"  data-bs-toggle="tab" aria-selected="false" role="tab" tabindex="-1">
                         <i class="fa-solid fa-gear"></i>

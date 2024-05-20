@@ -22,13 +22,13 @@ class UserController extends Controller
             'email' => ['required','email',Rule::unique('users', 'email')],
             'password' => 'required|confirmed|min:6'
         ]);
-        
+
         if($request->hasFile('userImage')) {
             $formFields['userImage'] = $request->file('userImage')->store('photos', 'public');
         }
 
         //Hash Password
-        $formFields['password'] = bcrypt($formFields['password']); 
+        $formFields['password'] = bcrypt($formFields['password']);
 
 
         //Create User
@@ -60,11 +60,11 @@ class UserController extends Controller
     }
 
     //Hash Password
-    $formFields['password'] = bcrypt($formFields['password']); 
+    $formFields['password'] = bcrypt($formFields['password']);
 
     // $formFields['user_id'] = auth()->id();
- 
-    $user->update($formFields); 
+
+    $user->update($formFields);
 
     return back()->with('message', 'User updated successfully!');
     }

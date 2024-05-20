@@ -1,61 +1,58 @@
 <x-layout>
-@include('partials._search')
+<!-- @include('partials._search') -->
 
-<a href="/listings/projects" class="inline-block text-black ml-4 mb-4"
-                ><i class="fa-solid fa-arrow-left"></i> Back
+<a href="/listings/projects" class="inline-block text-black ml-4 mb-4 mt-4">
+    <i class="fa-solid fa-arrow-left"></i>
+    Back
 </a>
 <div class="mx-4">
     <x-card class="p-10" bg-black>
-        <div
-            class="flex flex-col items-center justify-center text-center"
-        >
+        <div class="row">
         {{-- {{$listing}} --}}
-            <img
-                class="w-48 mr-6 mb-6"
-                src="{{$listing->logo ? asset('storage/' . $listing->logo) : asset('/images/no-image.png')}}"
-                alt=""
-            />
 
-            <h3 class="text-2xl mb-2">{{$listing->title}}</h3>
-            <div class="text-xl font-bold mb-4">{{$listing->company}}</div>
-
-            <x-listing-tags :tagsCsv="$listing->tags" />
-
-            <div class="text-lg my-4">
-                <i class="fa-solid fa-location-dot"></i> {{$listing->location}}
-            </div>
-            <div>
+            <div class="col col-lg-1">
                 <img
-                    class="rounded-circle border border-dark"
+                    class="rounded-circle border border-dark mb-3"
                     src="{{$listing->user->userImage ? asset('storage/' . $listing->user->userImage) : asset('images/default-image.jpg')}}"
                     width="80">
-            </div>
-            <div class="d-flex flex-row user-info">
-
-                <div class="d-flex flex-column justify-content-start ml-2">
-                    <span class="d-flex d-block font-weight-bold name">{{$listing->user->name}}</span>
                 </div>
+                <div class="col">
+                    <h3 class="text-2xl mb-2">{{$listing->title}}</h3>
+                    <div class="text-xl font-bold mb-4">{{$listing->company}}</div>
+
+                    <x-listing-tags :tagsCsv="$listing->tags" />
+
+                    <div class="text-lg my-4">
+                        <i class="fa-solid fa-location-dot"></i> {{$listing->location}}
+                        <span class="d-flex d-block font-weight-bold name mt-3">Author: {{$listing->user->name}}</span>
+                    </div>
+                    <h3 class="text-3xl font-bold mb-4">
+                        Project Description
+                    </h3>
+                    {{$listing->description}}
+                </div>
+            <div class="col-md-auto mb-3">
+                <img
+                    class="w-160 mr-6 mb-6"
+                    src="{{$listing->logo ? asset('storage/' . $listing->logo) : asset('/images/no-image.png')}}"
+                    alt=""
+                />
+                <h3>link : <a href="{{$listing->website}}" target="_blank">{{$listing->website}}</a></h3>
             </div>
 
-            <div class="border border-gray-200 w-full mb-6"></div>
+            <div class="border border-gray-200 w-full mb-6 mt-3"></div>
             <div>
-                <h3 class="text-3xl font-bold mb-4">
-                    Project Description
-
-                </h3>
                 <div class="text-lg space-y-6">
-                    {{$listing->description}}
-                    <hr>
+
                     {{-- {{$listing->id}} --}}
 
                     <form method="POST" action="/listings/{{$listing->id}}/comment" enctype="multipart/form-data">
                     {{-- <form method="POST" action="{{ route('comments.store', $listing->id) }}" enctype="multipart/form-data"> --}}
                         @csrf
-                        <div class="bg-light p-2">
-                            <td class="px-4 py-8 border-t border-b border-gray-300 text-lg">
-                                <a><i class="fa fa-message"></i> Comment
-                                </a>
-                            </td>
+                        <div class="bg-light p-2 pt-4">
+                            <!-- <td class="px-4 py-8 border-t border-b border-gray-300 text-lg">
+                                <a><i class="fa fa-message"></i> Comment </a>
+                            </td> -->
                             {{-- <div>
 
                                 <label for="image" class="inline-block text-lg mb-4">
@@ -73,17 +70,16 @@
 
                             </div> --}}
                              <div class="d-flex flex-row align-items-start">
-
-
-                                <img class="rounded-circle"
+                                <img class="rounded-circle ms-3 me-6"
                                     src="{{auth()->user()->userImage ? asset('storage/' . auth()->user()->userImage) : asset('Images/default-image.jpg')}}"
                                     width="40"
                                 >
 
-                                <textarea class="form-control ml-1 shadow-none textarea"
+                                <input class="form-control shadow-none textarea me-6"
                                     name="userComment"
+                                    placeholder="Add a comment..."
                                     rows="1">{{old('userComment')}}
-                                </textarea>
+                                </input>
 
                                 @error('userComment')
                                 <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -91,8 +87,9 @@
                             </div>
 
                             <div class="mt-2 text-right">
-                                <button class="btn btn-primary btn-sm shadow-none"
-                                    >Post comment</button>
+                                <button class="btn btn-primary btn-sm shadow-none me-6">
+                                    Post comment
+                                </button>
                             </div>
                         </div>
                     </form>
