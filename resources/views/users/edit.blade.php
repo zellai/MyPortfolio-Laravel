@@ -105,12 +105,12 @@
                 >
                     Update
                 </button>
-                <button
-                    href="/home"
+                <a
+                    href="/"
                     class="bg-laravel text-white rounded py-2 px-4 hover:bg-black col-3 me-3"
                 >
                     Cancel
-                </button>
+                </a>
             </div>
         </form>
     </div>
