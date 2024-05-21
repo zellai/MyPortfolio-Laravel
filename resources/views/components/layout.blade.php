@@ -79,16 +79,10 @@
                     </a>
                 </li>
                 <li class="nav-link" >
-                    <a href="/listings/experience" class="nav-link" data-bs-toggle="tab" aria-selected="false" role="tab" tabindex="-1">
-                        Experience
-                    </a>
-                </li>
-                <li class="nav-link" >
                     <a href="/listings/projects" class="nav-link" data-bs-toggle="tab" aria-selected="false" role="tab" tabindex="-1">
                         Projects
                     </a>
                 </li>
-
                 <li class="nav-link" >
                     <a href="/listings/manage" class="nav-link" data-bs-toggle="tab" aria-selected="false" role="tab" tabindex="-1">
                         <i class="fa-solid fa-gear"></i>

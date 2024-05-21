@@ -62,7 +62,7 @@ class ListingController extends Controller
         Listing::create($formFields);
 
 
-        return redirect('/')->with('message', 'Listing created successfully!');
+        return redirect('/listings/projects')->with('message', 'Listing created successfully!');
     }
 
     // Show Edit Form
@@ -98,7 +98,7 @@ class ListingController extends Controller
 
     $listing->update($formFields);
 
-    return back()->with('message', 'Listing updated successfully!');
+    return redirect('listings/manage')->with('message', 'Listing updated successfully!');
     }
 
     // Delete Listing
