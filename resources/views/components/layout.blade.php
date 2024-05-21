@@ -103,7 +103,10 @@
                                     <i class="fa-solid fa-door-closed"></i> Logout
                                 </button>
                             </form>
-                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="/users/{{auth()->user()->id}}/edit"  data-bs-toggle="tab" aria-selected="false" role="tab" tabindex="-1">
+                                <i class="fa-solid fa-gear"></i>
+                                Edit Account
+                            </a>
                             <a class="dropdown-item" href="#">Something else here</a>
                         </div>
                     </div>
