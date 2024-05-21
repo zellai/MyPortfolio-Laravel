@@ -137,7 +137,7 @@
                             </div>
 
                             <div class="w-full flex justify-end px-3">
-                                <button class="px-2.5 py-1.5 rounded-md text-white text-sm bg-indigo-500 text-lg me-8">
+                                <button class="px-2.5 py-1.5 rounded-md text-white bg-indigo-500 text-lg me-8">
                                     Post comment
                                 </button>
                             </div>

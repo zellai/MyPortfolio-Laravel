@@ -19,49 +19,53 @@
         </p>
     </div>
 </section>
-<div class="ps-10 pe-10 text-center align-center flex flex-col justify-center">
-    <h1 class="text-black mt-5 font-bold my-4">Technical Skills</h1>
+<div class="ps-10 pe-10 text-center items-center align-center flex flex-col justify-center">
+    <h1 class="text-black mt-3 font-bold my-4">Technical Skills</h1>
     <ul class="row">
-        <li class="col-1">
+        <li class="col-2 transition duration-500 hover:scale-125">
             <img class="rounded-circle border border-dark" src="{{asset('Images/ajax.png')}}" width="80" />
         </li>
-        <li class="col-1">
+        <li class="col-2 transition duration-500 hover:scale-125">
             <img class="rounded-circle border border-dark" src="{{asset('Images/bootstrap.png')}}" width="80" />
         </li>
-        <li class="col-1">
+        <li class="col-2 transition duration-500 hover:scale-125">
             <img class="rounded-circle border border-dark" src="{{asset('Images/codeigniter.png')}}" width="80" />
         </li>
-        <li class="col-1">
+        <li class="col-2 transition duration-500 hover:scale-125">
             <img class="rounded-circle border border-dark" src="{{asset('Images/django.png')}}" width="80" />
         </li>
-        <li class="col-1">
+        <li class="col-2 transition duration-500 hover:scale-125">
             <img class="rounded-circle border border-dark" src="{{asset('Images/github.png')}}" width="80" />
         </li>
-        <li class="col-1">
+        <li class="col-2 transition duration-500 hover:scale-125">
             <img class="rounded-circle border border-dark" src="{{asset('Images/HTML.png')}}" width="80" />
         </li>
-        <li class="col-1">
+    </ul>
+    <ul class="row">
+        <li class="col-2 transition duration-500 hover:scale-125">
             <img class="rounded-circle border border-dark" src="{{asset('Images/JavaScript.png')}}" width="80" />
         </li>
-        <li class="col-1">
+        <li class="col-2 transition duration-500 hover:scale-125">
             <img class="rounded-circle border border-dark" src="{{asset('Images/jQuery.png')}}" width="80" />
         </li>
-        <li class="col-1">
+        <li class="col-2 transition duration-500 hover:scale-125">
             <img class="rounded-circle border border-dark" src="{{asset('Images/mysql.png')}}" width="80" />
         </li>
-        <li class="col-1">
+        <li class="col-2 transition duration-500 hover:scale-125">
             <img class="rounded-circle border border-dark" src="{{asset('Images/php.png')}}" width="80" />
         </li>
-        <li class="col-1">
+        <li class="col-2 transition duration-500 hover:scale-125">
             <img class="rounded-circle border border-dark" src="{{asset('Images/python.png')}}" width="80" />
         </li>
-        <li class="col-1">
+        <li class="col-2 transition duration-500 hover:scale-125">
             <img class="rounded-circle border border-dark" src="{{asset('Images/socket.png')}}" width="80" />
         </li>
-        <li class="col-1 justify-end">
-            <img  src="{{asset('Images/sqlite.png')}}" width="80" />
+    </ul>
+    <ul class="row">
+        <li class="col-6 transition duration-500 hover:scale-125">
+            <img src="{{asset('Images/sqlite.png')}}" width="80" />
         </li>
-        <li class="col-1">
+        <li class="col-6 transition duration-500 hover:scale-125">
             <img class="rounded-circle border border-dark" src="{{asset('Images/reactjs.PNG')}}" width="80" />
         </li>
     </ul>

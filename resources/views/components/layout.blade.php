@@ -32,101 +32,64 @@
     <title>MyBlog | Ezel M. Espera</title>
 </head>
 <body class="mb-48">
-    <nav class="navbar navbar-expand-lg bg-dark border-bottom border-secondary" data-bs-theme="dark">
-        <div class="container-fluid d-flex justify-content-between align-items-center">
-            <!-- <a href="/">
-                <img class="w-24" src="{{asset('images/Ezel-logo.png')}}" alt="" class="logo"/>
-            </a> -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <ul class="navbar-nav" role="tablist">
+    <nav class="bg-black p-0 w-full">
+        <div class="container mx-auto flex flex-col lg:flex-row justify-between items-center">
+            <div class="text-white font-bold text-2xl mb-2 lg:mb-0 hover:text-orange-600 hover:cursor-pointer">
                 @auth
-                <li>
-                    <div>
+                <div class="lg:flex lg:flex-row lg:space-x-4 lg:mt-0 mt-2 flex flex-col items-center">
                     <img
                         class="rounded-circle border border-dark"
                         src="{{ auth()->user()->userImage ? asset('storage/' . auth()->user()->userImage) : asset('Images/default-image.jpg') }}"
                         width="80" />
-                    </div>
-                </li>
-                <li class="navbar-brand relative">
-                    <span class="nav-link" data-bs-toggle="tab" href="/" aria-selected="false" role="tab" tabindex="-1">
+                    <a class="nav-link" data-bs-toggle="tab" href="/" aria-selected="false" role="tab" tabindex="-1">
                         Welcome {{auth()->user()->name}}
-                    </span>
-                </li>
+                    </a>
 
-                <li class="nav-link" >
                     <a class="nav-link" data-bs-toggle="tab" href="/" aria-selected="false" role="tab" tabindex="-1">
                         Home
                     </a>
-                </li>
-                <li class="nav-link" >
                     <a class="nav-link" data-bs-toggle="tab" href="/listings/about" aria-selected="false" role="tab" tabindex="-1" >
                         About
                     </a>
-                </li>
-                <li class="nav-link" >
                     <a href="/listings/projects" class="nav-link" data-bs-toggle="tab" aria-selected="false" role="tab" tabindex="-1">
                         Projects
                     </a>
-                </li>
-                <li class="nav-link" >
-                    <a href="/listings/manage" class="nav-link" data-bs-toggle="tab" aria-selected="false" role="tab" tabindex="-1">
-                        <i class="fa-solid fa-gear"></i>
-                        Manage Projects
-                    </a>
-                </li>
-                <li class="nav-link" >
-                    <!-- <form class="nav-link" data-bs-toggle="tab" aria-selected="false" role="tab" tabindex="-1" method="POST" action="{{url('/logout')}}">
-                    @csrf
-                        <button type="submit">
-                            <i class="fa-solid fa-door-closed"></i> Logout
-                        </button>
-                    </form> -->
-                </li>
-                <li class="nav-link" >
-                    <!-- <a class="nav-link" href="/users/{{auth()->user()->id}}/edit"  data-bs-toggle="tab" aria-selected="false" role="tab" tabindex="-1">
-                        <i class="fa-solid fa-gear"></i>
-                        Settings
-                    </a> -->
                     <div class="dropdown mr-1">
                         <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" data-offset="10,20">
                             <i class="fa-solid fa-gear"></i>
                             Settings
                         </button>
-                        <div class="dropdown-menu">
-                            <form class="dropdown-item" data-bs-toggle="tab" aria-selected="false" role="tab" tabindex="-1" method="POST" action="{{url('/logout')}}">
-                                @csrf
-                                <button type="submit">
-                                    <i class="fa-solid fa-door-closed"></i> Logout
-                                </button>
-                            </form>
+                        <div class="dropdown-menu dropdown-menu-right">
                             <a class="dropdown-item" href="/users/{{auth()->user()->id}}/edit"  data-bs-toggle="tab" aria-selected="false" role="tab" tabindex="-1">
                                 <i class="fa-solid fa-gear"></i>
                                 Edit Account
                             </a>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                            <a class="dropdown-item" href="/listings/manage">
+                                <i class="fa-solid fa-diagram-project"></i>
+                                Manage Projects
+                            </a>
+                            <form class="dropdown-item" data-bs-toggle="tab" aria-selected="false" role="tab" tabindex="-1" method="POST" action="{{url('/logout')}}">
+                                @csrf
+                                <button type="submit">
+                                    <i class="fa-solid fa-right-from-bracket"></i>
+                                    Logout
+                                </button>
+                            </form>
                         </div>
                     </div>
-                </li>
-            </ul>
+                </div>
+            </div>
             @else
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a href="/register" class="nav-link hover:text-laravel">
-                        <i class="fa-solid fa-user-plus"></i>
-                        Register
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="/login" class="hover:text-laravel nav-link">
-                        <i class="fa-solid fa-arrow-right-to-bracket"></i>
-                        Login
-                    </a>
-                </li>
-            </ul>
+            <div class="lg:flex lg:flex-row lg:space-x-4 lg:mt-0 mt-4 flex flex-col items-center">
+                <a href="/register" class="nav-link hover:text-laravel">
+                    <i class="fa-solid fa-user-plus"></i>
+                    Register
+                </a>
+                <a href="/login" class="hover:text-laravel nav-link">
+                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                    Login
+                </a>
+            </div>
             @endauth
         </div>
     </nav>
