@@ -3,7 +3,7 @@
 <x-card>
     <div class="flex relative">
         <img
-            class="hidden w-48 mr-6 md:block"
+            class="hidden w-48 mr-6 md:block mx-auto bg-white dark:bg-gray-900 rounded-lg shadow-lg transition duration-500 hover:scale-125"
             src="{{$listing->logo ? asset('storage/' . $listing->logo) : asset('/public/images/no-image.png')}}"
             alt=""
         />

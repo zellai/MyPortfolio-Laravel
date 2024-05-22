@@ -32,19 +32,12 @@
                     {{$listing->description}}
                 </div>
             <div class="col-md-auto mb-3">
-                <img
-                    class="w-160 mr-6 mb-6"
-                    src="{{$listing->logo ? asset('storage/' . $listing->logo) : asset('/images/no-image.png')}}"
-                    alt=""
-                />
-                <h3>link : <a href="{{$listing->website}}" target="_blank">{{$listing->website}}</a></h3>
+                <iframe width="650" height="315" src="{{$listing->website}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
-
             <div class="border border-gray-200 w-full mb-6 mt-3"></div>
             <div class="w-fullbg-white rounded-lg border p-1 md:p-3 me-10">
                 <h3 class="font-semibold p-1">Discussion</h3>
                 <div class="flex flex-col gap-5 m-3">
-
                     @unless(count($comments)==0)
                     @foreach ($comments as $comment)
                     @if($listing->id === $comment->listing_id)

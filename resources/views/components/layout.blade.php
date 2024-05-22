@@ -31,61 +31,64 @@
         crossorigin="anonymous"></script>
     <title>MyBlog | Ezel M. Espera</title>
 </head>
-<body class="mb-48">
+<body class="mb-20">
     <nav class="bg-black p-0 w-full">
-        <div class="container mx-auto flex flex-col lg:flex-row justify-between items-center">
-            <div class="text-white font-bold text-2xl mb-2 lg:mb-0 hover:text-orange-600 hover:cursor-pointer">
-                @auth
-                <div class="lg:flex lg:flex-row lg:space-x-4 lg:mt-0 mt-2 flex flex-col items-center">
+        <div class="ps-8 mx-auto flex flex-col lg:flex-row justify-between items-center">
+            @auth
+            <div class="text-white font-bold text-3xl mb-2 lg:mb-0 hover:text-orange-600 hover:cursor-pointer">
+                <div class="lg:flex lg:flex-row lg:space-x-4 lg:mt-0 mt-2 flex flex-col items-center text-3xl">
                     <img
                         class="rounded-circle border border-dark"
                         src="{{ auth()->user()->userImage ? asset('storage/' . auth()->user()->userImage) : asset('Images/default-image.jpg') }}"
                         width="80" />
-                    <a class="nav-link" data-bs-toggle="tab" href="/" aria-selected="false" role="tab" tabindex="-1">
+                    <a class="nav-link px-4 py-2 hover:text-orange-600" data-bs-toggle="tab" href="/" aria-selected="false" role="tab" tabindex="-1">
                         Welcome {{auth()->user()->name}}
                     </a>
+                </div>
+            </div>
 
-                    <a class="nav-link" data-bs-toggle="tab" href="/" aria-selected="false" role="tab" tabindex="-1">
-                        Home
-                    </a>
-                    <a class="nav-link" data-bs-toggle="tab" href="/listings/about" aria-selected="false" role="tab" tabindex="-1" >
-                        About
-                    </a>
-                    <a href="/listings/projects" class="nav-link" data-bs-toggle="tab" aria-selected="false" role="tab" tabindex="-1">
-                        Projects
-                    </a>
-                    <div class="dropdown mr-1">
-                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" data-offset="10,20">
+            <div class="lg:flex lg:flex-row lg:space-x-4 lg:mt-0 mt-2 flex flex-col items-center text-2xl">
+                <a class="nav-link text-white px-4 py-2 hover:text-orange-600" data-bs-toggle="tab" href="/" aria-selected="false" role="tab" tabindex="-1">
+                    Home
+                </a>
+                <a class="nav-link text-white px-4 py-2 hover:text-orange-600" data-bs-toggle="tab" href="/listings/about" aria-selected="false" role="tab" tabindex="-1" >
+                    About
+                </a>
+                <a href="/listings/projects" class="nav-link text-white  px-4 py-2 hover:text-orange-600" data-bs-toggle="tab" aria-selected="false" role="tab" tabindex="-1">
+                    Projects
+                </a>
+                <div class="dropdown mr-1 pe-7">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" data-offset="10,20">
+                        <i class="fa-solid fa-gear"></i>
+                        Settings
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="/users/{{auth()->user()->id}}/edit"  data-bs-toggle="tab" aria-selected="false" role="tab" tabindex="-1">
                             <i class="fa-solid fa-gear"></i>
-                            Settings
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="/users/{{auth()->user()->id}}/edit"  data-bs-toggle="tab" aria-selected="false" role="tab" tabindex="-1">
-                                <i class="fa-solid fa-gear"></i>
-                                Edit Account
-                            </a>
-                            <a class="dropdown-item" href="/listings/manage">
-                                <i class="fa-solid fa-diagram-project"></i>
-                                Manage Projects
-                            </a>
-                            <form class="dropdown-item" data-bs-toggle="tab" aria-selected="false" role="tab" tabindex="-1" method="POST" action="{{url('/logout')}}">
-                                @csrf
-                                <button type="submit">
-                                    <i class="fa-solid fa-right-from-bracket"></i>
-                                    Logout
-                                </button>
-                            </form>
-                        </div>
+                            Edit Account
+                        </a>
+                        <a class="dropdown-item" href="/listings/manage">
+                            <i class="fa-solid fa-diagram-project"></i>
+                            Manage Projects
+                        </a>
+                        <form class="dropdown-item" data-bs-toggle="tab" aria-selected="false" role="tab" tabindex="-1" method="POST" action="{{url('/logout')}}">
+                            @csrf
+                            <button type="submit">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                                Logout
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
+            <!-- </div> -->
             @else
-            <div class="lg:flex lg:flex-row lg:space-x-4 lg:mt-0 mt-4 flex flex-col items-center">
-                <a href="/register" class="nav-link hover:text-laravel">
+            <div class="lg:flex lg:flex-row lg:space-x-4 lg:mt-0 mt-4 flex flex-col items-center text-2xl">
+                <a href="/register" class="nav-link hover:text-laravel text-white">
                     <i class="fa-solid fa-user-plus"></i>
                     Register
                 </a>
-                <a href="/login" class="hover:text-laravel nav-link">
+                <a href="/login" class="hover:text-laravel nav-link text-white">
                     <i class="fa-solid fa-arrow-right-to-bracket"></i>
                     Login
                 </a>

@@ -33,7 +33,7 @@ Route::get('/', [ListingController::class, 'index']);
 // Show Create Form
 Route::get('/create', [ListingController::class, 'create'])->middleware('auth');
 
-// Store Listing Data  
+// Store Listing Data
 Route::post('/listings', [ListingController::class, 'store'])->middleware('auth');
 
 // Show Edit Form
@@ -49,7 +49,7 @@ Route::delete('/listings/{listing}', [ListingController::class, 'destroy'])->mid
 Route::get('/listings/manage', [ListingController::class, 'manage'])->middleware('auth');
 
 // Create Experience
-Route::get('/listings/experience', [ListingController::class, 'experience'])->middleware('auth');
+// Route::get('/listings/experience', [ListingController::class, 'experience'])->middleware('auth');
 
 // Projects
 Route::get('/listings/projects', [ListingController::class, 'projects'])->middleware('auth');
