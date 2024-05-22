@@ -32,7 +32,9 @@
                     {{$listing->description}}
                 </div>
             <div class="col-md-auto mb-3">
-                <iframe width="650" height="315" src="{{$listing->website}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <!-- {{$listing->website}} ?  -->
+                    <iframe width="650" height="315" src="{{$listing->website}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
             </div>
             <div class="border border-gray-200 w-full mb-6 mt-3"></div>
             <div class="w-fullbg-white rounded-lg border p-1 md:p-3 me-10">

@@ -11,6 +11,7 @@
                             </img>
                             <h1 class="text-xl font-bold">Ezel M. Espera</h1>
                             <p class="text-gray-700">Software Engineer</p>
+                            <p class="text-gray-700">zellai022890@gmail.com</p>
                             <div class="mt-6 flex flex-wrap gap-4 justify-center">
                                 <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Contact</a>
                                 <a href="#" class="bg-gray-300 hover:bg-gray-400 text-gray-700 py-2 px-4 rounded">Resume</a>
@@ -21,12 +22,6 @@
                             <span class="text-gray-700 uppercase font-bold tracking-wider mb-2">Skills</span>
                             <ul>
                                 <li class="mb-2">HTML, CSS, LESS, Bootstrap, Responsive Web Design, Git, GitHub, jQuery, PHP, Object-Oriented Programming (OOP), Model View Controller (MVC), Ajax, JSON, JavaScript ES5 & ES6, NodeJS, Express JS, Socket.io, ReactJS, JSX, React-Bootstrap, Python, Arduino, CodeIgniter 3, Laravel, SQL, Database Design, Entity Relationship Diagram (ERD), MS Access 2013, and QuickBooks.</li>
-                                <!-- <li class="mb-2">React</li>
-                                <li class="mb-2">Node.js</li>
-                                <li class="mb-2">HTML/CSS</li>
-                                <li class="mb-2">Tailwind Css</li>
-                                <li class="mb-2"></li>
-                                <li class="mb-2"></li> -->
                             </ul>
                         </div>
                     </div>
@@ -34,11 +29,11 @@
                 <div class="col-span-4 sm:col-span-9">
                     <div class="bg-white shadow rounded-lg p-6">
                         <h2 class="text-xl font-bold mb-4">About Me</h2>
-                        <p class="text-gray-700">Greetings! I am an enthusiastic software engineer with a diverse background in electronics engineering and teaching.
-                            I am eager to learn and grow, constantly seeking opportunities to enhance my skills.
-                            With a strong foundation in Laravel, ReactJS, HTML, Bootstrap, MySQL, and Python, I am ready to take on new challenges and contribute to meaningful projects.</>
-                            While I may be a beginner, I am confident that my background in electronics engineering, teaching experience, and foundational skills in Laravel, HTML, Bootstrap, MySQL, and Python make me a valuable asset to any team. I am eager to contribute to meaningful projects, expand my knowledge, and grow as a software engineer.
-                            If you are looking for a dedicated and motivated programmer with a strong desire to learn and contribute, I would be thrilled to connect and explore how we can collaborate to achieve our goals. Let's embark on this exciting journey together!
+                        <p class="text-gray-700">Greetings! I am an enthusiastic software engineer with a background in
+                            electronics engineering and teaching. I have foundational skills in Laravel, ReactJS, HTML,
+                            Bootstrap, MySQL, and Python, and am eager to grow and contribute to meaningful projects.
+                            Though a beginner, my diverse experience and strong desire to learn make me a valuable asset
+                            to any team. Let's connect and explore how we can collaborate to achieve our goals!
                         </p>
 
                         <h3 class="font-semibold text-center mt-3 -mb-2">
